@@ -94,5 +94,22 @@ typedef struct {
 
 #define ADCSEQCbits      (*(volatile ADCSEQCbits_t *)ADCSEQC)
 
+typedef struct {
+    unsigned EN             :1;
+    unsigned DIR            :1;
+    unsigned THR            :16;
+    unsigned                :16;
+} ADCCMPbits_t;
+
+#define ADCCMPbits      (*(volatile ADCCMPbits_t *)ADCCMP)
+
+typedef struct {
+    unsigned CNVC           :10;
+    unsigned                :6;
+    unsigned CNVD           :10;
+    unsigned                :6;
+} ADCCNVCbits_t;
+
+#define ADCCNVCbits     (*(volatile ADCCNVC_t *)ADCCNVC)
 
 #endif
