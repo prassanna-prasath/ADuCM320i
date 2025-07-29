@@ -79,8 +79,19 @@ typedef struct {
     unsigned                :1;
     unsigned EN             :1;
     unsigned ST             :1;
-} ADCSEQbit_t;
+} ADCSEQbits_t;
 
 #define ADCSEQbits      (*(volatile ADCSEQbits_t *)ADCSEQ)
+
+typedef struct {
+    unsigned DIF0           :5;
+    unsigned DIF2           :5;
+    unsigned DIF4           :5;
+    unsigned DIF6           :5;
+    unsigned                :4;
+} ADCSEQCbits_t;
+
+#define ADCSEQCbits      (*(volatile ADCSEQCbits_t *)ADCSEQC)
+
 
 #endif
