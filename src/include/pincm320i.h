@@ -121,6 +121,9 @@ Additional Byte registers
 #define AFEREFC         __UINT8__(0x40087834);
 #endif
 
+/*----------------------------
+Additional registers Bit field definition
+-----------------------------*/
 typedef struct {
     unsigned IBUF_BYP       :2;
     unsigned IBUF_PD        :2;
