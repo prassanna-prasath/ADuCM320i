@@ -110,8 +110,42 @@ typedef struct {
     unsigned                :6;
 } ADCCNVCbits_t;
 
-#define ADCCNVCbits     (*(volatile ADCCNVC_t *)ADCCNVC)
+#define ADCCNVCbits     (*(volatile ADCCNVCbits_t *)ADCCNVC)
 
+/*----------------------------
+Additional Byte registers 
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define IBUFCON         __UINT16__(0x40081400);
+#define AFETEMPC        __UINT8__(0x40087830);
+#define AFEREFC         __UINT8__(0x40087834);
+#endif
+
+typedef struct {
+    unsigned IBUF_BYP       :2;
+    unsigned IBUF_PD        :2;
+    unsigned                :12;
+} IBUFCONbits_t;
+
+#define IBUFCONbits     (*(volatile IBUFCONbits_t *)IBUFCON)
+
+typedef struct {
+    unsigned PD             :1;
+    unsigned CHOP           :1;
+    unsigned                :6;
+} AFETEMPCbits_t;
+
+#define AFETEMPCbits    (*(volatile AFETEMPCbits_t *)AFETEMPC)
+
+typedef struct {
+    unsigned BG_PD          :1;
+    unsigned B2V5R_PD       :1;
+    unsigned B2MA_PDB       :1;
+    unsigned REF            :1;
+    unsigned                :4;
+} AFEREFCbits_t;
+
+#define AFEREFCbits     (*(volatile AFEREFCbits_t *)AFEREFC)
 
 
 #endif
