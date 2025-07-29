@@ -48,11 +48,38 @@
     #endif
     
     /*----------------------------
-    ADC Bit registers
+    ADC Bit field definition
     -----------------------------*/
-    
+    typedef union {
+        struct {
+            unsigned C_TYPE         :3;
+            unsigned CNV_DMA        :1;
+            unsigned SEQ_DMA        :1;
+            unsigned                :1;
+            unsigned RESTART_ADC    :1;
+            unsigned REFB_PUP       :1;
+        };
+        struct {
+            unsigned                :1;
+            unsigned PUP            :1;
+            unsigned SOFT_RESET     :1;
+            unsigned                :5;
+        };
+    } ADCCONbits_t;
 
+    #define ADCCONbits    (*(volatile ADCCONbits_t *)ADCCON)
 
+    typedef union {
+        struct {
+            unsigned ADCCP          :5;
+            unsigned                :3;
+        };        
+        struct {
+            unsigned ADCCN          :5;
+            unsigned                :3;
+        };
+    } ADCCHAbits_t;
 
+    #define ADCCHAbits    (*(volatile ADCCHAbits_t *)ADCCHA)
 
 #endif
