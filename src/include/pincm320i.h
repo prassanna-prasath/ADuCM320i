@@ -88,6 +88,7 @@ typedef struct {
     unsigned DIF2           :5;
     unsigned DIF4           :5;
     unsigned DIF6           :5;
+    unsigned T              :8;
     unsigned                :4;
 } ADCSEQCbits_t;
 
