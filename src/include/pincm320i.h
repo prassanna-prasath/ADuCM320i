@@ -45,9 +45,12 @@
     #define ADCSEQC     __UINT32__(0x4008608C);
     #define ADCCMP      __UINT32__(0x40086098);
     #define ADCCNVC     __UINT32__(0x4008609C);
+    #endif
     
-
-
+    /*----------------------------
+    ADC Bit registers
+    -----------------------------*/
+    
 
 
 
