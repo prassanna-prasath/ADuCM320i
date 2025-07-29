@@ -51,34 +51,34 @@ ADC Byte Registers
 ADC Bit field definition
 -----------------------------*/
 typedef struct {
-unsigned C_TYPE         :3;
-unsigned CNV_DMA        :1;
-unsigned SEQ_DMA        :1;
-unsigned                :1;
-unsigned RESTART_ADC    :1;
-unsigned REFB_PUP       :1;  
-unsigned                :1;
-unsigned PUP            :1;
-unsigned SOFT_RESET     :1;
-unsigned                :5;
+    unsigned C_TYPE         :3;
+    unsigned CNV_DMA        :1;
+    unsigned SEQ_DMA        :1;
+    unsigned                :1;
+    unsigned RESTART_ADC    :1;
+    unsigned REFB_PUP       :1;  
+    unsigned                :1;
+    unsigned PUP            :1;
+    unsigned SOFT_RESET     :1;
+    unsigned                :5;
 } ADCCONbits_t;
 
 #define ADCCONbits      (*(volatile ADCCONbits_t *)ADCCON)
 
 typedef struct {
-unsigned ADCCP          :5;
-unsigned                :3;
-unsigned ADCCN          :5;
-unsigned                :3;
+    unsigned ADCCP          :5;
+    unsigned                :3;
+    unsigned ADCCN          :5;
+    unsigned                :3;
 } ADCCHAbits_t;
 
 #define ADCCHAbits      (*(volatile ADCCHAbits_t *)ADCCHA)
 
 typedef struct {
-    unsigned CH         :29;
-    unsigned            :1;
-    unsigned EN         :1;
-    unsigned ST         :1;
+    unsigned CH             :29;
+    unsigned                :1;
+    unsigned EN             :1;
+    unsigned ST             :1;
 } ADCSEQbit_t;
 
 #define ADCSEQbits      (*(volatile ADCSEQbits_t *)ADCSEQ)
