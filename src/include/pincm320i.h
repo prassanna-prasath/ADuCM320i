@@ -7,14 +7,11 @@
 #ifndef PINCM320I_H_
 #define PINCM320I_H_
 
-    #ifdef __GNUC__
-        typedef unsigned int sfr32;
-    #endif
     /*----------------------------
     ADC Byte Registers
     -----------------------------*/
     #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-    #define ADCCON      __UINT32__(0x40082174);
+    #define ADCCON      __UINT16__(0x40082174);
     #define ADCDAT0     __UINT32__(0x40086000);
     #define ADCDAT1     __UINT32__(0x40086004);
     #define ADCDAT2     __UINT32__(0x40086008);
@@ -43,8 +40,12 @@
     #define ADCDAT25    __UINT32__(0x40086064);
     #define ADCDAT26    __UINT32__(0x40086068);
     #define ADCDAT27    __UINT32__(0x4008606C);
+    #define ADCCHA      __UINT16__(0x40086080);
+    #define ADCSEQ      __UINT32__(0x40086088);
+    #define ADCSEQC     __UINT32__(0x4008608C);
+    #define ADCCMP      __UINT32__(0x40086098);
+    #define ADCCNVC     __UINT32__(0x4008609C);
     
-    #endif
 
 
 
