@@ -150,5 +150,24 @@ typedef struct {
 
 #define AFEREFCbits     (*(volatile AFEREFCbits_t *)AFEREFC)
 
+/*----------------------------
+Analog Comparator Byte Registers
+-----------------------------*/
+#define AFECOMP         __UINT16__(0x40087838)
+
+/*----------------------------
+Analog Comparator Bit field definition
+-----------------------------*/
+typedef struct {
+    unsigned HYS            :1;
+    unsigned SPEED          :2;
+    unsigned INV            :1;
+    unsigned OUT            :2;
+    unsigned INNEG          :2;
+    unsigned EN             :1;
+    unsigned                :7;
+} AFECOMPbits_t;
+
+#define AFECOMPbits     (*(volatile AFECOMPbits_t *)AFECOMP)
 
 #endif
