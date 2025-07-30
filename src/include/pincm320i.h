@@ -367,6 +367,6 @@ typedef struct {
     unsigned                    :15;
 } LVRSTbits_t;
 
-#define LVRSTbits       (*(volatile LVARSTbits_t *)LVARST)
+#define LVRSTbits       (*(volatile LVRSTbits_t *)LVRST)
 
 #endif
