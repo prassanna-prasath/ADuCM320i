@@ -75,8 +75,8 @@ typedef struct {
 PWR management Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define PWR_MOD     __UINT16__(0x40002400)
-#define PWR_KEY     __UINT16__(0x40002404)
+#define PWR_MOD         __UINT16__(0x40002400)
+#define PWR_KEY         __UINT16__(0x40002404)
 #endif
 
 /*----------------------------
@@ -100,40 +100,40 @@ typedef struct {
 ADC Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define ADCCON      __UINT16__(0x40082174)
-#define ADCDAT0     __UINT32__(0x40086000)
-#define ADCDAT1     __UINT32__(0x40086004)
-#define ADCDAT2     __UINT32__(0x40086008)
-#define ADCDAT3     __UINT32__(0x4008600C)
-#define ADCDAT4     __UINT32__(0x40086010)
-#define ADCDAT5     __UINT32__(0x40086014)
-#define ADCDAT6     __UINT32__(0x40086018)
-#define ADCDAT7     __UINT32__(0x4008601C)
-#define ADCDAT8     __UINT32__(0x40086020)
-#define ADCDAT9     __UINT32__(0x40086024)
-#define ADCDAT10    __UINT32__(0x40086028)
-#define ADCDAT11    __UINT32__(0x4008602C)
-#define ADCDAT12    __UINT32__(0x40086030)
-#define ADCDAT13    __UINT32__(0x40086034)
-#define ADCDAT14    __UINT32__(0x40086038)
-#define ADCDAT15    __UINT32__(0x4008603C)
-#define ADCDAT16    __UINT32__(0x40086040)
-#define ADCDAT17    __UINT32__(0x40086044)
-#define ADCDAT18    __UINT32__(0x40086048)
-#define ADCDAT19    __UINT32__(0x4008604C)
-#define ADCDAT20    __UINT32__(0x40086050)
-#define ADCDAT21    __UINT32__(0x40086054)
-#define ADCDAT22    __UINT32__(0x40086058)
-#define ADCDAT23    __UINT32__(0x4008605C)
-#define ADCDAT24    __UINT32__(0x40086060)
-#define ADCDAT25    __UINT32__(0x40086064)
-#define ADCDAT26    __UINT32__(0x40086068)
-#define ADCDAT27    __UINT32__(0x4008606C)
-#define ADCCHA      __UINT16__(0x40086080)
-#define ADCSEQ      __UINT32__(0x40086088)
-#define ADCSEQC     __UINT32__(0x4008608C)
-#define ADCCMP      __UINT32__(0x40086098)
-#define ADCCNVC     __UINT32__(0x4008609C)
+#define ADCCON          __UINT16__(0x40082174)
+#define ADCDAT0         __UINT32__(0x40086000)
+#define ADCDAT1         __UINT32__(0x40086004)
+#define ADCDAT2         __UINT32__(0x40086008)
+#define ADCDAT3         __UINT32__(0x4008600C)
+#define ADCDAT4         __UINT32__(0x40086010)
+#define ADCDAT5         __UINT32__(0x40086014)
+#define ADCDAT6         __UINT32__(0x40086018)
+#define ADCDAT7         __UINT32__(0x4008601C)
+#define ADCDAT8         __UINT32__(0x40086020)
+#define ADCDAT9         __UINT32__(0x40086024)
+#define ADCDAT10        __UINT32__(0x40086028)
+#define ADCDAT11        __UINT32__(0x4008602C)
+#define ADCDAT12        __UINT32__(0x40086030)
+#define ADCDAT13        __UINT32__(0x40086034)
+#define ADCDAT14        __UINT32__(0x40086038)
+#define ADCDAT15        __UINT32__(0x4008603C)
+#define ADCDAT16        __UINT32__(0x40086040)
+#define ADCDAT17        __UINT32__(0x40086044)
+#define ADCDAT18        __UINT32__(0x40086048)
+#define ADCDAT19        __UINT32__(0x4008604C)
+#define ADCDAT20        __UINT32__(0x40086050)
+#define ADCDAT21        __UINT32__(0x40086054)
+#define ADCDAT22        __UINT32__(0x40086058)
+#define ADCDAT23        __UINT32__(0x4008605C)
+#define ADCDAT24        __UINT32__(0x40086060)
+#define ADCDAT25        __UINT32__(0x40086064)
+#define ADCDAT26        __UINT32__(0x40086068)
+#define ADCDAT27        __UINT32__(0x4008606C)
+#define ADCCHA          __UINT16__(0x40086080)
+#define ADCSEQ          __UINT32__(0x40086088)
+#define ADCSEQC         __UINT32__(0x4008608C)
+#define ADCCMP          __UINT32__(0x40086098)
+#define ADCCNVC         __UINT32__(0x4008609C)
 #endif
 
 /*----------------------------
@@ -835,4 +835,188 @@ typedef struct {
 
 #define LVIDbits        (*(volatile LVIDbits_t *)LVID)
 
+/*----------------------------
+GPIO Byte Registers
+-----------------------------*/
+#define GP0CON              __UINT16__(0x40020000)
+#define GP1CON              __UINT16__(0x40020040)
+#define GP2CON              __UINT16__(0x40020080)
+#define GP3CON              __UINT16__(0x400200C0)
+#define GP4CON              __UINT16__(0x40020100)
+#define GP5CON              __UINT16__(0x40020140)
+/*-------*/
+#define GP0OE               __UINT8__(0x40020004)
+#define GP1OE               __UINT8__(0x40020044)
+#define GP2OE               __UINT8__(0x40020084)
+#define GP3OE               __UINT8__(0x400200C4)
+#define GP4OE               __UINT8__(0x40020104)
+#define GP5OE               __UINT8__(0x40020144)
+/*-------*/
+#define GP0PUL              __UINT8__(0x40020008)
+#define GP1PUL              __UINT8__(0x40020048)
+#define GP2PUL              __UINT8__(0x40020088)
+#define GP3PUL              __UINT8__(0x400200C8)
+#define GP4PUL              __UINT8__(0x40020108)
+#define GP5PUL              __UINT8__(0x40020148)
+/*-------*/
+#define GP0IE               __UINT8__(0x4002000C)
+#define GP1IE               __UINT8__(0x4002004C)
+#define GP2IE               __UINT8__(0x4002008C)
+#define GP3IE               __UINT8__(0x400200CC)
+#define GP4IE               __UINT8__(0x4002010C)
+#define GP5IE               __UINT8__(0x4002014C)
+/*-------*/
+#define GP0IN               __UINT8__(0x40020010)
+#define GP1IN               __UINT8__(0x40020050)
+#define GP2IN               __UINT8__(0x40020090)
+#define GP3IN               __UINT8__(0x400200D0)
+#define GP4IN               __UINT8__(0x40020110)
+#define GP5IN               __UINT8__(0x40020150)
+/*-------*/
+#define GP0OUT              __UINT8__(0x40020014)
+#define GP0OUT              __UINT8__(0x40020014)
+#define GP1OUT              __UINT8__(0x40020054)
+#define GP2OUT              __UINT8__(0x40020094)
+#define GP3OUT              __UINT8__(0x400200D4)
+#define GP4OUT              __UINT8__(0x40020114)
+#define GP5OUT              __UINT8__(0x40020154)
+/*-------*/
+#define GP0SET              __UINT8__(0x40020018)
+#define GP1SET              __UINT8__(0x40020058)
+#define GP2SET              __UINT8__(0x40020098)
+#define GP3SET              __UINT8__(0x400200D8)
+#define GP4SET              __UINT8__(0x40020118)
+#define GP5SET              __UINT8__(0x40020158)
+/*-------*/
+#define GP0CLR              __UINT8__(0x4002001C)
+#define GP1CLR              __UINT8__(0x4002005C)
+#define GP2CLR              __UINT8__(0x4002009C)
+#define GP3CLR              __UINT8__(0x400200DC)
+#define GP4CLR              __UINT8__(0x4002011C)
+#define GP5CLR              __UINT8__(0x4002015C)
+/*-------*/
+#define GP0TGL              __UINT8__(0x40020020)
+#define GP1TGL              __UINT8__(0x40020060)
+#define GP2TGL              __UINT8__(0x400200A0)
+#define GP3TGL              __UINT8__(0x400200E0)
+#define GP4TGL              __UINT8__(0x40020120)
+#define GP5TGL              __UINT8__(0x40020160)
+/*-------*/
+#define GP0ODE              __UINT8__(0x40020024)
+#define GP1ODE              __UINT8__(0x40020064)
+#define GP2ODE              __UINT8__(0x400200A4)
+#define GP3ODE              __UINT8__(0x400200E4)
+#define GP4ODE              __UINT8__(0x40020124)
+#define GP5ODE              __UINT8__(0x40020164)
 #endif
+
+/*----------------------------
+GPIO Byte Registers
+-----------------------------*/
+typedef struct {
+    unsigned CON0           :2;
+    unsigned CON1           :2;
+    unsigned CON2           :2;
+    unsigned CON3           :2;
+    unsigned CON4           :2;
+    unsigned CON5           :2;
+    unsigned CON6           :2;
+    unsigned CON7           :2;    
+} GPxCONbits_t;
+
+#define GP0CONbits      (*(volatile GPxCONbits_t *)GP0CON)
+#define GP1CONbits      (*(volatile GPxCONbits_t *)GP1CON)
+#define GP2CONbits      (*(volatile GPxCONbits_t *)GP2CON)
+#define GP3CONbits      (*(volatile GPxCONbits_t *)GP3CON)
+#define GP4CONbits      (*(volatile GPxCONbits_t *)GP4CON)
+#define GP5CONbits      (*(volatile GPxCONbits_t *)GP5CON)
+
+typedef struct {
+    unsigned OE             :8;
+} GPxOEbits_t;
+
+#define GP0OEbits       (*(volatile GPxOEbits_t *)GP0OE)
+#define GP1OEbits       (*(volatile GPxOEbits_t *)GP1OE)
+#define GP2OEbits       (*(volatile GPxOEbits_t *)GP2OE)
+#define GP3OEbits       (*(volatile GPxOEbits_t *)GP3OE)
+#define GP4OEbits       (*(volatile GPxOEbits_t *)GP4OE)
+#define GP5OEbits       (*(volatile GPxOEbits_t *)GP5OE)
+
+typedef struct {
+    unsigned PUL            :8;
+} GPxPULbits_t;
+
+/*Pull ups*/
+#define GP0PULbits      (*(volatile GPxPULbits_t *)GP0PUL)
+#define GP1PULbits      (*(volatile GPxPULbits_t *)GP1PUL)
+#define GP2PULbits      (*(volatile GPxPULbits_t *)GP2PUL)
+#define GP3PULbits      (*(volatile GPxPULbits_t *)GP3PUL)
+/*Pull downs*/
+#define GP4PULbits      (*(volatile GPxPULbits_t *)GP4PUL)
+#define GP5PULbits      (*(volatile GPxPULbits_t *)GP5PUL)
+
+typedef struct {
+    unsigned IEN            :8; 
+} GPxIEbits_t;
+
+#define GP0IEbits       (*(volatile GPxIEbits_t *)GP0IE)
+#define GP1IEbits       (*(volatile GPxIEbits_t *)GP1IE)
+#define GP2IEbits       (*(volatile GPxIEbits_t *)GP2IE)
+#define GP3IEbits       (*(volatile GPxIEbits_t *)GP3IE)
+#define GP4IEbits       (*(volatile GPxIEbits_t *)GP4IE)
+#define GP5IEbits       (*(volatile GPxIEbits_t *)GP5IE)
+
+typedef struct {
+    unsigned IN             :8;
+} GPxINbits_t;
+
+#define GP0INbits       (*(volatile GPxINbits_t *)GP0IN)
+#define GP1INbits       (*(volatile GPxINbits_t *)GP1IN)
+#define GP2INbits       (*(volatile GPxINbits_t *)GP2IN)
+#define GP3INbits       (*(volatile GPxINbits_t *)GP3IN)
+#define GP4INbits       (*(volatile GPxINbits_t *)GP4IN)
+#define GP5INbits       (*(volatile GPxINbits_t *)GP5IN)
+
+typedef struct {
+    unsigned OUT            :8;
+} GPxOUTbits_t;
+
+#define GP0OUTbits      (*(volatile GPxOUTbits_t *)GP0OUT)
+#define GP1OUTbits      (*(volatile GPxOUTbits_t *)GP1OUT)
+#define GP2OUTbits      (*(volatile GPxOUTbits_t *)GP2OUT)
+#define GP3OUTbits      (*(volatile GPxOUTbits_t *)GP3OUT)
+#define GP4OUTbits      (*(volatile GPxOUTbits_t *)GP4OUT)
+#define GP5OUTbits      (*(volatile GPxOUTbits_t *)GP5OUT)
+
+typedef struct {
+    unsigned CLR            :8;
+} GPxCLRbits_t;
+
+#define GP0CLRbits      (*(volatile GPxCLRbits_t *)GP0CLR)
+#define GP1CLRbits      (*(volatile GPxCLRbits_t *)GP1CLR)
+#define GP2CLRbits      (*(volatile GPxCLRbits_t *)GP2CLR)
+#define GP3CLRbits      (*(volatile GPxCLRbits_t *)GP3CLR)
+#define GP4CLRbits      (*(volatile GPxCLRbits_t *)GP4CLR)
+#define GP5CLRbits      (*(volatile GPxCLRbits_t *)GP5CLR)
+
+typedef struct {
+    unsigned TGL            :8;
+} GPxTGLbits_t;
+
+#define GP0TGLbits      (*(volatile GPxTGLbits_t *)GP0TGL)
+#define GP1TGLbits      (*(volatile GPxTGLbits_t *)GP1TGL)
+#define GP2TGLbits      (*(volatile GPxTGLbits_t *)GP2TGL)
+#define GP3TGLbits      (*(volatile GPxTGLbits_t *)GP3TGL)
+#define GP4TGLbits      (*(volatile GPxTGLbits_t *)GP4TGL)
+#define GP5TGLbits      (*(volatile GPxTGLbits_t *)GP5TGL)
+
+typedef struct {
+    unsigned ODE            :8;
+} GPxODEbits_t;
+
+#define GP0ODEbits      (*(volatile GPxODEbits_t *)GP0ODE)
+#define GP1ODEbits      (*(volatile GPxODEbits_t *)GP1ODE)
+#define GP2ODEbits      (*(volatile GPxODEbits_t *)GP2ODE)
+#define GP3ODEbits      (*(volatile GPxODEbits_t *)GP3ODE)
+#define GP4ODEbits      (*(volatile GPxODEbits_t *)GP4ODE)
+#define GP5ODEbits      (*(volatile GPxODEbits_t *)GP5ODE)
