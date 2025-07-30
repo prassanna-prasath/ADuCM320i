@@ -208,4 +208,49 @@ VDAC Byte Registers
 #define DAC7DAT         __UINT32__(0x40086420)
 #endif
 
+/*----------------------------
+External Interrupts Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define EI0CFG          __UINT16__(0x40002420)
+#define EI1CFG          __UINT16__(0x40002424)
+#define EI2CFG          __UINT16__(0x40002428)
+#define EICLR           __UINT16__(0x40002430)
+#endif
+/*----------------------------
+Ext Interrupts Bit field definition
+-----------------------------*/
+typedef struct {
+    unsigned IRQ0MDE        :3;
+    unsigned IRQ0EN         :1;
+    unsigned IRQ1MDE        :3;
+    unsigned IRQ1EN         :1;
+    unsigned IRQ2MDE        :3;
+    unsigned IRQ2EN         :1;
+    unsigned                :4;
+} EI0CFGbits_t;
+
+#define EI0CFGbits     (*(volatile EI0CFGbits_t *)EI0CFG)
+
+typedef struct {
+    unsigned IRQ4MDE        :3;
+    unsigned IRQ4EN         :1;
+    unsigned IRQ5MDE        :3;
+    unsigned IRQ5EN         :1;
+    unsigned                :4;
+    unsigned IRQ7MDE        :3;
+    unsigned IRQ7EN         :1;
+} EI1CFGbits_t;
+
+#define EI1CFGbits     (*(volatile EI1CFGbits_t *)EI1CFG)
+
+typedef struct {
+    unsigned IRQ8MDE        :3;
+    unsigned IRQ8EN         :1;
+    unsigned                :12;
+} EI2CFGbits_t;
+
+#define EI2CFGbits     (*(volatile EI2CFGbits_t *)EI2CFG)
+
+
 #endif
