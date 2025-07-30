@@ -186,6 +186,26 @@ IDAC Byte Registers
 #define IDAC3CON        __UINT8__(0x4008681C)
 #endif
 
-
+/*----------------------------
+VDAC Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define DAC0CON         __UINT16__(0x40082400)
+#define DAC1CON         __UINT16__(0x40082404)
+#define DAC2CON         __UINT16__(0x40082408)
+#define DAC3CON         __UINT16__(0x4008240C)
+#define DAC4CON         __UINT16__(0x40082410)
+#define DAC5CON         __UINT16__(0x40082414)
+#define DAC6CON         __UINT16__(0x40082418)
+#define DAC7CON         __UINT16__(0x4008241C)
+#define DAC0DAT         __UINT32__(0x40086404)
+#define DAC1DAT         __UINT32__(0x40086408)
+#define DAC2DAT         __UINT32__(0x4008640C)
+#define DAC3DAT         __UINT32__(0x40086410)
+#define DAC4DAT         __UINT32__(0x40086414)
+#define DAC5DAT         __UINT32__(0x40086418)
+#define DAC6DAT         __UINT32__(0x4008641C)
+#define DAC7DAT         __UINT32__(0x40086420)
+#endif
 
 #endif
