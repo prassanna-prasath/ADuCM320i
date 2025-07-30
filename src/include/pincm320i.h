@@ -326,5 +326,47 @@ typedef struct {
 
 #define INTSTAbits     (*(volatile INTSTAbits_t *)INTSTA)
 
+/*----------------------------
+Reset Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define RSTCFG          __UINT16__(0x40002408)
+#define RSTKEY          __UINT16__(0x4000240C)
+#define RSTSTA          __UINT16__(0x40002440)
+#define LVRST           __UINT16__(0x40082C34)
+#endif
+
+/*----------------------------
+Reset Bit field definition
+-----------------------------*/
+typedef struct {
+    unsigned GPIO_PLA_RETAIN    :1;
+    unsigned                    :15;
+} RSTCFGbits_t;
+
+#define RSTCFGbits     (*(volatile RSTCFGbits_t *)RSTCFG)
+
+typedef struct {
+    unsigned RstKEY             :16;
+} RSTKEYbits_t;
+
+#define RSTKEYbits      (*(volatile RSTKEYbits_t *)RSTKEY)
+
+typedef struct {
+    unsigned POR            :1;
+    unsigned EXTRST         :1;
+    unsigned WDRST          :1;
+    unsigned SWRST          :1;
+    unsigned                :12; 
+} RSTSTAbits_t;
+
+#define RSTSTAbits      (*(volatile RSTSTAbits_t *)RSTSTA)
+
+typedef struct {
+    unsigned RETAIN             :1;
+    unsigned                    :15;
+} LVRSTbits_t;
+
+#define LVRSTbits       (*(volatile LVARSTbits_t *)LVARST)
 
 #endif
