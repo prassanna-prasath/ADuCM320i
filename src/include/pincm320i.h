@@ -267,5 +267,64 @@ typedef struct {
 
 #define EICLRbits     (*(volatile EICLRbits_t *)EICLR)
 
+/*----------------------------
+Low Voltage Die Interrupt Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define INTCLR          __UINT16__(0x40083004)
+#define INTSEL          __UINT16__(0x40083008)
+#define INTSTA          __UINT16__(0x4008300C)
+#endif
+
+/*----------------------------
+Low Voltage Die Interrupts Bit field definition
+-----------------------------*/
+typedef struct {
+    unsigned CLR_ADC_SOFTCONV   :1;
+    unsigned CLR_ADC_SEQ        :1;
+    unsigned CLR_DCOMP          :1;
+    unsigned CLR_ACOMP          :1;
+    unsigned CLR_IDAC_TSHUT     :1;
+    unsigned CLR_IDAC_EXTRESLOW :1;
+    unsigned CLR_RDECC_ERR      :1;
+    unsigned CLR_WRECC_ERR      :1;
+} INTCLRbits_t;
+
+#define INTCLRbits     (*(volatile INTCLRbits_t *)INTCLR)
+
+typedef struct {
+    unsigned SEL_ADC_SOFTCONV_1     :1;
+    unsigned SEL_ADC_SEQ_1          :1;
+    unsigned SEL_DCOMP_1            :1;
+    unsigned SEL_ACOMP_1            :1;
+    unsigned SEL_IDAC_TSHUT_1       :1;
+    unsigned SLE_IDAC_EXTRESLOW_1   :1;
+    unsigned SEL_RDECC_ERR_1        :1;
+    unsigned SEL_WRECC_ERR_1        :1;
+    unsigned SEL_ADC_SOFTCONV_0     :1;
+    unsigned SEL_ADC_SEQ_0          :1;
+    unsigned SEL_DCOMP_0            :1;
+    unsigned SEL_ACOMP_0            :1;
+    unsigned SEL_IDAC_TSHUT_0       :1;
+    unsigned SLE_IDAC_EXTRESLOW_0   :1;
+    unsigned SEL_RDECC_ERR_0        :1;
+    unsigned SEL_WRECC_ERR_0        :1;
+} INTSELbits_t;
+
+#define INTSELbits     (*(volatile INTSELbits_t *)INTSEL)
+
+typedef struct {
+    unsigned ADC_SOFTCONV           :1;
+    unsigned ADC_SEQ                :1;
+    unsigned DCOMP                  :1;
+    unsigned ACOMP                  :1;
+    unsigned IDAC_TSHUT             :1;
+    unsigned IDAC_EXTRESLOW         :1;
+    unsigned RDECC_ERR              :1;
+    unsigned WRECC_ERR              :1;
+} INTSTAbits_t;
+
+#define INTSTAbits     (*(volatile INTSTAbits_t *)INTSTA)
+
 
 #endif
