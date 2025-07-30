@@ -809,5 +809,30 @@ typedef struct {
 
 #define CACHEKEYbits    (*(volatile CACHEKEYbits_t *)CACHEKEY)
 
+/*----------------------------
+Si Verification Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define CHIPID              __UINT16__(0x40002024)
+#define LV_ID                __UINT16__(0x40082C30)
+#endif
+
+/*----------------------------
+Si Verification Bit field definition
+-----------------------------*/
+
+typedef struct {
+    unsigned REV            :4;
+    unsigned PARTID         :12;
+} CHIPIDbits_t;
+
+#define CHIPIDbits      (*(volatile CHIPIDbits_t *)CHIPID)
+
+typedef struct {
+    unsigned LVREV          :4;
+    unsigned LVID           :12;   
+} LVIDbits_t;
+
+#define LVIDbits        (*(volatile LVIDbits_t *)LVID)
 
 #endif
