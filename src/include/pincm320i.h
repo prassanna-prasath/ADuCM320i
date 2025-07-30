@@ -420,7 +420,7 @@ Reset Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #define RSTCFG          __UINT16__(0x40002408)
-#define RST_KEY          __UINT16__(0x4000240C)
+#define RST_KEY         __UINT16__(0x4000240C)
 #define RSTSTA          __UINT16__(0x40002440)
 #define LVRST           __UINT16__(0x40082C34)
 #endif
