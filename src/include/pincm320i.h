@@ -626,4 +626,188 @@ Flash Controller Byte Registers
 #define CACHEKEY            __UINT32__(0x400180C8)
 #endif
 
+/*----------------------------
+Flash Controller Bit field Definitions
+-----------------------------*/
+typedef struct {
+    unsigned CMDBUSY            :1;
+    unsigned WRCLOSE            :1;
+    unsigned CMDDONE            :1;
+    unsigned WRALMOSTDONE       :1;
+    unsigned CMDRES             :2;
+    unsigned                    :1;
+    unsigned ECCERRCMD          :2;
+    unsigned ECCREADERRFLSH0    :2;
+    unsigned ECCREADERRFLSH1    :2;
+    unsigned SIGNERR            :1;
+    unsigned ECCERRSIGN         :3;
+    unsigned ECCCOUNTFLASH      :3;
+    unsigned                    :3;
+    unsigned ECCCOUNTFLASH1     :3;
+    unsigned ECCREADERRDBUS     :2;
+    unsigned ECCREADERRIBUS     :2;
+    unsigned                    :3;
+} FEESTAbits_t;
+
+#define FEESTAbits      (*(volatile FEESTAbits_t *)FEESTA)
+
+typedef struct {
+    unsigned IENCMD             :1;
+    unsigned IWRALCOMP          :1;
+    unsigned IENERR             :1;
+    unsigned                    :29;
+} FEECON0bits_t;
+
+#define FEECON0bits      (*(volatile FEECON0bits_t *)FEECON0)
+
+typedef struct {
+    unsigned CMD                :5;
+    unsigned                    :27;
+} FEECMDbits_t;
+
+#define FEECMDbits      (*(volatile FEECMDbits_t *)FEECMD)
+
+typedef struct {
+    unsigned                    :3;
+    unsigned FLADDR             :16;
+    unsigned                    :13;
+} FEEFLADRbits_t;
+
+#define FEEFLADRbits    (*(volatile FEEFLADRbits_t *)FEEFLADR)
+
+typedef struct {
+    unsigned FLDATA0            :32;
+} FEEFLDATA0bits_t;
+
+#define FEEFLDATA0bits  (*(volatile FEEFLDATA0bits_t *)FEEFLDATA0)
+
+typedef struct {
+    unsigned FLDATA1            :32;
+} FEEFLDATA1bits_t;
+
+#define FEEFLDATA1bits  (*(volatile FEEFLDATA1bits_t *)FEEFLDATA1)
+
+typedef struct {
+    unsigned                    :11;
+    unsigned PAGEADDR0          :8;
+    unsigned                    :13;
+} FEEADR0bits_t;
+
+#define FEEADR0bits     (*(volatile FEEADR0bits_t *)FEEADR0)
+
+typedef struct {
+    unsigned                    :11;
+    unsigned PAGEADDR1          :8;
+    unsigned                    :13;
+} FEEADR1bits_t;
+
+#define FEEADR1bits     (*(volatile FEEADR1bits_t *)FEEADR1)
+
+typedef struct {
+    unsigned KEY                :32;
+} FEEKEYbits_t;
+
+#define FEEKEYbits      (*(volatile FEEKEYbits_t *)FEEKEY)
+
+typedef struct {
+    unsigned WRPROT0            :32;
+} FEEPRO0bits_t;
+
+#define FEEPRO0bits     (*(volatile FEEPRO0bits_t *)FEEPRO0)
+
+typedef struct {
+    unsigned SIGN               :24;
+    unsigned                    :8;
+} FEESIGbits_t;
+
+#define FEESIGbits      (*(volatile FEESIGbits_t *)FEESIG)
+
+typedef struct {
+    unsigned DBG                :1;
+    unsigned KHDMA              :1;
+    unsigned INCR               :1;
+    unsigned SWAP               :1;
+    unsigned MDIO               :1;
+    unsigned                    :27;
+} FEECON1bits_t;
+
+#define FEECON1bits     (*(volatile FEECON1bits_t *)FEECON1)
+
+typedef struct {
+    unsigned WRABORTADDR        :32;
+} FEEWRADDRAbits_t;
+
+#define FEEWRADDRAbits  (*(volatile FEEWRADDRAbits_t *)FEEWRADDRA)
+
+typedef struct {
+    unsigned SYSIRQABORTEN      :32;
+} FEEAEN0bits_t;
+
+#define FEEAEN0bits     (*(volatile FEEAEN0bits_t *)FEEAEN0)
+
+typedef struct {
+    unsigned SYSIRQABORTEN      :32;
+} FEEAEN1bits_t;
+
+#define FEEAEN1bits     (*(volatile FEEAEN1bits_t *)FEEAEN1)
+
+typedef struct {
+    unsigned ECCDISABLE         :1;
+    unsigned ECCCMDAHBEN        :2;
+    unsigned ECCCMDINTEN        :2;
+    unsigned                    :27;
+} FEEECCCONFIGbits_t;
+
+#define FEEECCCONFIGbits    (*(volatile FEEECCCONFIGbits_t *)FEEECCCONFIG)
+
+typedef struct {
+    unsigned VALUE              :19;
+    unsigned                    :13;
+} FEEECCADDR0bits_t;
+
+#define FEEECCADDR0bits (*(volatile FEEECCADDR0bits_t *)FEEECCADDR0)
+
+typedef struct {
+    unsigned VALUE              :19;
+    unsigned                    :13;
+} FEEECCADDR1bits_t;
+
+#define FEEECCADDR1bits (*(volatile FEEECCADDR1bits_t *)FEEECCADDR1)
+
+typedef struct {
+    unsigned IINIT              :1;
+    unsigned IEN                :1;
+    unsigned ILOCK              :1;
+    unsigned                    :12;
+    unsigned DINIT              :1;
+    unsigned DEN                :1;
+    unsigned DLOCK              :1;
+    unsigned                    :12;
+} CACHESTATbits_t;
+
+#define CACHESTATbits   (*(volatile CACHESTATbits_t *)CACHESTAT)
+
+typedef struct {
+    unsigned IINIT              :1;
+    unsigned IEN                :1;
+    unsigned ILOCK              :1;
+    unsigned IWRBUF             :1;
+    unsigned IRDBUF             :1;
+    unsigned                    :11;
+    unsigned DINIT              :1;
+    unsigned DEN                :1;
+    unsigned DLOCK              :1;
+    unsigned DWRBUF             :1;
+    unsigned                    :21;
+} CACHESETUPbits_t;
+
+#define CACHESETUPbits  (*(volatile CACHESETUPbits_t *)CACHESETUP)
+
+typedef struct {
+    unsigned KEY                :32;
+} CACHEKEYbits_t;
+
+#define CACHEKEYbits    (*(volatile CACHEKEYbits_t *)CACHEKEY)
+
+
 #endif
