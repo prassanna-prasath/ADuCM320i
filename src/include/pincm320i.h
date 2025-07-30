@@ -598,4 +598,32 @@ typedef struct {
 
 #define DMABSCLRbits    (*(volatile DMABSCLRbits_t *)DMABSCLR)
 
+/*----------------------------
+Flash Controller Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define FEESTA              __UINT32__(0x40018000)
+#define FEECON0             __UINT32__(0x40018004)
+#define FEECMD              __UINT32__(0x40018008)
+#define FEEFLADR            __UINT32__(0x4001800C)
+#define FEEFLDATA0          __UINT32__(0x40018010)
+#define FEEFLDATA1          __UINT32__(0x40018014)
+#define FEEADR0             __UINT32__(0x40018018)
+#define FEEADR1             __UINT32__(0x4001801C)
+#define FEEKEY              __UINT32__(0x40018020)
+#define FEEPRO0             __UINT32__(0x40018028)
+#define FEEPRO1             __UINT32__(0x4001802C)
+#define FEESIG              __UINT32__(0x40018034)
+#define FEECON1             __UINT32__(0x40018038)
+#define FEEWRADDRA          __UINT32__(0x40018040)
+#define FEEAEN0             __UINT32__(0x40018048)
+#define FEEAEN1             __UINT32__(0x4001804C)
+#define FEEECCCONFIG        __UINT32__(0x40018064)
+#define FEEECCADDR0         __UINT32__(0x40018074)
+#define FEEECCADDR1         __UINT32__(0x40018078)
+#define CACHESTAT           __UINT32__(0x400180C0)
+#define CACHESETUP          __UINT32__(0x400180C4)
+#define CACHEKEY            __UINT32__(0x400180C8)
+#endif
+
 #endif
