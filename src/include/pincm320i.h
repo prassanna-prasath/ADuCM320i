@@ -8,6 +8,31 @@
 #define PINCM320I_H_
 
 /*----------------------------
+PWR management Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define PWR_MOD     __UINT16__(0x40002400)
+#define PWR_KEY     __UINT16__(0x40002404)
+#endif
+
+/*----------------------------
+PWR management Bit field definition
+-----------------------------*/
+
+typedef struct {
+    unsigned PWRMOD         :2;
+    unsigned                :14;    
+} PWRMODbits_t;
+
+#define PWRMODbits      (*(volatile PWRMODbits_t *)PWR_MOD)
+
+typedef struct {
+    unsigned PWRKEY         :16;
+} PWRKEYbits_t;
+
+#define PWRKEYbits      (*(volatile PWRKEYbits_t *)PWR_KEY)
+
+/*----------------------------
 ADC Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
@@ -331,7 +356,7 @@ Reset Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #define RSTCFG          __UINT16__(0x40002408)
-#define RSTKEY          __UINT16__(0x4000240C)
+#define RST_KEY          __UINT16__(0x4000240C)
 #define RSTSTA          __UINT16__(0x40002440)
 #define LVRST           __UINT16__(0x40082C34)
 #endif
@@ -347,10 +372,10 @@ typedef struct {
 #define RSTCFGbits     (*(volatile RSTCFGbits_t *)RSTCFG)
 
 typedef struct {
-    unsigned RstKEY             :16;
+    unsigned RSTKEY             :16;
 } RSTKEYbits_t;
 
-#define RSTKEYbits      (*(volatile RSTKEYbits_t *)RSTKEY)
+#define RSTKEYbits      (*(volatile RSTKEYbits_t *)RST_KEY)
 
 typedef struct {
     unsigned POR            :1;
@@ -368,5 +393,7 @@ typedef struct {
 } LVRSTbits_t;
 
 #define LVRSTbits       (*(volatile LVRSTbits_t *)LVRST)
+
+
 
 #endif
