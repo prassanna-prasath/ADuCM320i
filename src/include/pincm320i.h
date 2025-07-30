@@ -252,5 +252,20 @@ typedef struct {
 
 #define EI2CFGbits     (*(volatile EI2CFGbits_t *)EI2CFG)
 
+typedef struct {
+    unsigned IRQ0           :1;
+    unsigned IRQ1           :1;
+    unsigned IRQ2           :1;
+    unsigned                :1;
+    unsigned IRQ4           :1;
+    unsigned IRQ5           :1;
+    unsigned                :1;
+    unsigned IRQ7           :1;
+    unsigned IRQ8           :1;
+    unsigned                :7;
+} EICLRbits_t;
+
+#define EICLRbits     (*(volatile EICLRbits_t *)EICLR)
+
 
 #endif
