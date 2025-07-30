@@ -153,7 +153,9 @@ typedef struct {
 /*----------------------------
 Analog Comparator Byte Registers
 -----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #define AFECOMP         __UINT16__(0x40087838)
+#endif
 
 /*----------------------------
 Analog Comparator Bit field definition
@@ -169,5 +171,21 @@ typedef struct {
 } AFECOMPbits_t;
 
 #define AFECOMPbits     (*(volatile AFECOMPbits_t *)AFECOMP)
+
+/*----------------------------
+IDAC Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define IDAC0DAT        __UINT32__(0x40086800)
+#define IDAC0CON        __UINT8__(0x40086804)
+#define IDAC1DAT        __UINT32__(0x40086808)
+#define IDAC1CON        __UINT8__(0x4008680C)
+#define IDAC2DAT        __UINT32__(0x40086810)
+#define IDAC2CON        __UINT8__(0x40086814)
+#define IDAC3DAT        __UINT32__(0x40086818)
+#define IDAC3CON        __UINT8__(0x4008681C)
+#endif
+
+
 
 #endif
