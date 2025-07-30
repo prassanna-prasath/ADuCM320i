@@ -458,6 +458,144 @@ typedef struct {
 
 #define LVRSTbits       (*(volatile LVRSTbits_t *)LVRST)
 
+/*----------------------------
+DMA Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define DMASTA          __UINT32__(0x40010000)
+#define DMACFG          __UINT32__(0x40010004)
+#define DMAPDBPTR       __UINT32__(0x40010008)
+#define DMAADBPTR       __UINT32__(0x4001000C)
+#define DMASWREQ        __UINT32__(0x40010014)
+#define DMARMSKSET      __UINT32__(0x40010020)
+#define DMARMSKCLR      __UINT32__(0x40010024)
+#define DMAENSET        __UINT32__(0x40010028)
+#define DMAENCLR        __UINT32__(0x4001002C)
+#define DMAALTSET       __UINT32__(0x40010030)
+#define DMAALTCLR       __UINT32__(0x40010034)
+#define DMAPRISET       __UINT32__(0x40010038)
+#define DMAPRICLR       __UINT32__(0x4001003C)
+#define DMAERRCLR       __UINT32__(0x4001004C)
+#define DMABSSET        __UINT32__(0x40010800)
+#define DMABSCLR        __UINT32__(0x40010804)
+#endif
 
+/*----------------------------
+DMA Bit field Definitions
+-----------------------------*/
+
+typedef struct {
+    unsigned MENABLE            :1;
+    unsigned                    :3;
+    unsigned STATE              :4;
+    unsigned                    :8;
+    unsigned CHNLSM1            :5;
+    unsigned                    :11;
+} DMASTAbits_t;
+
+#define DMASTAbits      (*(volatile DMASTAbits_t *)DMASTA)
+
+typedef struct {
+    unsigned MENABLE            :1;
+    unsigned                    :31;
+} DMACFGbits_t;
+
+#define DMACFGbits      (*(volatile DMACFGbits_t *)DMACFG)
+
+typedef struct {
+    unsigned CTRLBASEPTR        :32;
+} DMAPDBPTRbits_t;
+
+#define DMAPDBPTRbits   (*(volatile DMAPDBPTRbits_t *)DMAPDBPTR)
+
+typedef struct {
+    unsigned ALTCBPTR           :32;
+} DMAADBPTRbits_t;
+
+#define DMAADBPTRbits   (*(volatile DMAADBPTRbits_t *)DMAADBPTR)
+
+typedef struct {
+    unsigned CHSWREQ            :14;
+    unsigned                    :8;
+} DMASWREQbits_t;
+
+#define DMASWREQbits    (*(volatile DMASWREQbits_t *)DMASWREQ)
+
+typedef struct {
+    unsigned CHREQMSET          :14;
+    unsigned                    :8;
+} DMARMSKSETbits_t;
+
+#define DMARMSKSETbits  (*(volatile DMARMSKSETbits_t *)DMARMSKSET)
+
+typedef struct {
+    unsigned CHREQMCLR          :14;
+    unsigned                    :8;
+} DMARMSKCLRbits_t;
+
+#define DMARMSKCLRbits  (*(volatile DMARMSKCLRbits_t *)DMARMSKCLR)
+
+typedef struct {
+    unsigned CHENSET            :14;
+    unsigned                    :8;
+} DMAENSETbits_t;
+
+#define DMAENSETbits    (*(volatile DMAENSETbits_t *)DMAENSET)
+
+typedef struct {
+    unsigned CHENCLR            :14;
+    unsigned                    :8;
+} DMAENCLRbits_t;
+
+#define DMAENCLRbits    (*(volatile DMAENCLRbits_t *)DMAENCLR)
+
+typedef struct {
+    unsigned CHPRIALTSET        :14;
+    unsigned                    :8;
+} DMAALTSETbits_t;
+
+#define DMAALTSETbits   (*(volatile DMAALTSETbits_t *)DMAALTSET)
+
+typedef struct {
+    unsigned CHPRIALTCLR        :14;
+    unsigned                    :8;
+} DMAALTCLRbits_t;
+
+#define DMAALTCLRbits   (*(volatile DMAALTCLRbits_t *)DMAALTCLR)
+
+typedef struct {
+    unsigned CHPRISET           :14;
+    unsigned                    :8;
+} DMAPRISETbits_t;
+
+#define DMAPRISETbits   (*(volatile DMAPRISETbits_t *)DMAPRISET)
+
+typedef struct {
+    unsigned CHPRICLR           :14;
+    unsigned                    :8;
+} DMAPRICLRbits_t;
+
+#define DMAPRICLRbits   (*(volatile DMAPRICLRbits_t *)DMAPRICLR)
+
+typedef struct {
+    unsigned ERRCLR             :14;
+    unsigned                    :8;
+} DMAERRCLRbits_t;
+
+#define DMAERRCLRbits   (*(volatile DMAERRCLRbits_t *)DMAERRCLR)
+
+typedef struct {
+    unsigned CHBSWAPSET         :14;
+    unsigned                    :8;
+} DMABSSETbits_t;
+
+#define DMABSSETbits    (*(volatile DMABSSETbits_t *)DMABSSET)
+
+typedef struct {
+    unsigned CHBSWAPCLR         :14;
+    unsigned                    :8;
+} DMABSCLRbits_t;
+
+#define DMABSCLRbits    (*(volatile DMABSCLRbits_t *)DMABSCLR)
 
 #endif
