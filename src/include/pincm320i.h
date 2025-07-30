@@ -8,6 +8,70 @@
 #define PINCM320I_H_
 
 /*----------------------------
+Clock Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define CLKCON0     __UINT16__(0x40028000)
+#define CLKCON1     __UINT16__(0x40028004)
+#define CLKCON5     __UINT16__(0x40028014)
+#define CLKSTAT0    __UINT16__(0x40028018)
+#endif
+
+/*----------------------------
+Clock Bit field definition
+-----------------------------*/
+
+typedef struct {
+    unsigned CLKMUX         :2;
+    unsigned                :2;
+    unsigned CLKOUT         :4;
+    unsigned                :3;
+    unsigned PLLMUX         :1;
+    unsigned                :1;
+    unsigned SPLLIE         :1;
+    unsigned                :1;
+    unsigned HFXTALIE       :1;
+} CLKCON0bits_t;
+
+#define CLKCON0bits     (*(volatile CLKCON0bits_t *)CLKCON0)
+
+typedef struct {
+    unsigned CDHCLK         :3;
+    unsigned                :5;
+    unsigned CDPCLK         :3;
+    unsigned CDD2DCLK       :1;
+    unsigned                :4;
+} CLKCON1bits_t;
+
+#define CLKCON1bits     (*(volatile CLKCON1bits_t *)CLKCON1)
+
+typedef struct {
+    unsigned UCLKSPI0OFF    :1;
+    unsigned UCLKSPI1OFF    :1;
+    unsigned                :1;
+    unsigned UCLKI2C0OFF    :1;
+    unsigned UCLKI2C1OFF    :1;
+    unsigned UCLKUARTOFF    :1;
+    unsigned                :10;
+} CLKCON5bits_t;
+
+#define CLKCON5bits     (*(volatile CLKCON5bits_t *)CLKCON5)
+
+typedef struct {
+    unsigned SPLLSTATUS     :1;
+    unsigned SPLLLOCK       :1;
+    unsigned SPLLUNLOCK     :1;
+    unsigned                :9;
+    unsigned HFXTALSTATUS   :1;
+    unsigned HFXTALOK       :1;
+    unsigned HFXTALNOK      :1;
+    unsigned                :1;
+} CLKSTAT0bits_t;
+
+#define CLKSTAT0bits    (*(volatile CLKSTAT0bits_t *)CLKSTAT0)
+
+
+/*----------------------------
 PWR management Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
