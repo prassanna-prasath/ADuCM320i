@@ -1694,5 +1694,148 @@ typedef struct {
 
 #define T3STAbits       (*(volatile T3STAbits_t *)T3STA)
 
+/*----------------------------
+Wake Up Timer Byte register
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+    #define T4VAL0              __UINT16__(0x40002500)
+    #define T4VAL1              __UINT16__(0x40002504)
+    #define T4CON               __UINT16__(0x40002508)
+    #define T4INC               __UINT16__(0x4000250C)
+    #define T4WUFB0             __UINT16__(0x40002510)
+    #define T4WUFB1             __UINT16__(0x40002514)
+    #define T4WUFC0             __UINT16__(0x40002518)
+    #define T4WUFC1             __UINT16__(0x4000251C)
+    #define T4WUFD0             __UINT16__(0x40002520)
+    #define T4WUFD1             __UINT16__(0x40002524)
+    #define T4IEN               __UINT16__(0x40002528)
+    #define T4STA               __UINT16__(0x4000252C)
+    #define T4CLRI              __UINT16__(0x40002530)
+    #define T4WUFA0             __UINT16__(0x4000253C)
+    #define T4WUFA1             __UINT16__(0x40002540)
+#endif
+
+/*----------------------------
+Wake Up Timer bit field definitions
+-----------------------------*/
+
+typedef struct {
+    unsigned T4VALL         :16;
+} T4VAL0bits_t;
+
+#define T4VAL0bits          (*(volatile T4VAL0bits_t *)T4VAL0)
+
+typedef struct {
+    unsigned T4VALH         :16;
+} T4VAL1bits_t;
+
+#define T4VAL1bits          (*(volatile T4VAL1bits_t *)T4VAL1)
+
+typedef  struct {
+    unsigned PRE            :2;
+    unsigned                :1;
+    unsigned FREEZE         :1;
+    unsigned                :2;
+    unsigned MOD            :1;
+    unsigned ENABLE         :1;
+    unsigned WUEN           :1;
+    unsigned CLK            :2;
+    unsigned STOP_WUFA      :1;
+    unsigned                :4;
+} T4CONbits_t;
+
+#define T4CONbits       (*(volatile T4CONbits_t *)T4CON)
+
+typedef struct {
+    unsigned INTERVAL       :12;
+    unsigned                :4;
+} T4INCbits_t;
+
+#define T4INCbits       (*(volatile T4INCbits_t *)T4INC)
+
+typedef struct {
+    unsigned T4WUFBL        :16;
+} T4WUFB0bits_t;
+
+#define T4WUFB0bits     (*(volatile T4WUFB0bits_t *)T4WUFB0)
+
+typedef struct {
+    unsigned T4WUFBH        :16;
+} T4WUFB1bits_t;
+
+#define T4WUFB1bits     (*(volatile T4WUFB1bits_t *)T4WUFB1)
+
+typedef struct {
+    unsigned T4WUFCL        :16;
+} T4WUFC0bits_t;
+
+#define T4WUFCLbits     (*(volatile T4WUFC0bits_t *)T4WUFC0)
+
+typedef struct {
+    unsigned T4WUFCH        :16;
+} T4WUFC1bits_t;
+
+#define T4WUFC1bits     (*(volatile T4WUFC1bits_t *)T4WUFC1)
+
+typedef struct {
+    unsigned WUFD0        :16;
+} T4WUFD0bits_t;
+
+#define T4WUFD0bits     (*(volatile T4WUFD0bits_t *)T4WUFD0)
+
+typedef  struct {
+    unsigned T4WUFDH        :16;
+} T4WUFD1bits_t;
+
+#define T4WUFD1bits     (*(volatile T4WUFD1bits_t *)T4WUFD1)
+
+typedef struct {
+    unsigned WUFA           :1;
+    unsigned WUFB           :1;
+    unsigned WUFC           :1;
+    unsigned WUFD           :1;
+    unsigned ROLL           :1;
+    unsigned                :11;
+} T4IENbits_t;
+
+#define T4IENbits       (*(volatile T4IENbits_t *)T4IEN)
+
+typedef struct {
+    unsigned WUFA           :1;
+    unsigned WUFB           :1;
+    unsigned WUFC           :1;
+    unsigned WUFD           :1;
+    unsigned ROLL           :1;
+    unsigned                :1;
+    unsigned IRQCRY         :1;
+    unsigned FREEZE         :1;
+    unsigned PDOK           :1;
+    unsigned                :7;
+} T4STAbits_t;
+
+#define T4STAbits       (*(volatile T4STAbits_t *)T4STA)
+
+typedef struct {
+    unsigned WUFA           :1;
+    unsigned WUFB           :1;
+    unsigned WUFC           :1;
+    unsigned WUFD           :1;
+    unsigned ROLL           :1;
+    unsigned                :11;
+} T4CLRIbits_t;
+
+#define T4CLRIbits      (*(volatile T4CLRIbits_t *)T4CLRI)
+
+typedef struct {
+    unsigned T4WUFAL        :16;
+} T4WUFA0bits_t;
+
+#define T4WUFA0bits     (*(volatile T4WUFA0bits_t *)T4WUFA0)
+
+typedef struct {
+    unsigned T4WUFAH        :16;
+} T4WUFA1bits_t;
+
+#define T4WUFA1bits     (*(volatile T4WUFA1bits_t *)T4WUFA1)
 
 #endif
