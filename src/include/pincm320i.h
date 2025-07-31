@@ -1306,4 +1306,119 @@ typedef struct {
 #define I2C0ASSCLbits   (*(volatile I2CxASSCLbits_t *)I2C0ASSCL)
 #define I2C1ASSCLbits   (*(volatile I2CxASSCLbits_t *)I2C1ASSCL)
 
+/*----------------------------
+SPI0 Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define SPI0STA             __UINT16__(0x4002C000)
+#define SPI0RX              __UINT16__(0x4002C004)
+#define SPI0TX              __UINT16__(0x4002C008)
+#define SPI0DIV             __UINT16__(0x4002C00C)
+#define SPI0CON             __UINT16__(0x4002C010)
+#define SPI0DMA             __UINT16__(0x4002C014)
+#define SPI0CNT             __UINT16__(0x4002C018)
+#endif
+
+/*----------------------------
+SPI1 Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define SPI1STA             __UINT16__(0x40030000)
+#define SPI1RX              __UINT16__(0x40030004)
+#define SPI1TX              __UINT16__(0x40030008)
+#define SPI1DIV             __UINT16__(0x4003000C)
+#define SPI1CON             __UINT16__(0x40030010)
+#define SPI1DMA             __UINT16__(0x40030014)
+#define SPI1CNT             __UINT16__(0x40030018)
+#endif
+
+/*----------------------------
+SPI0/1 Bit field definitions
+-----------------------------*/
+typedef struct {
+    unsigned IRQ                :1;
+    unsigned TXFSTA             :3;
+    unsigned TXUR               :1;
+    unsigned TX                 :1;
+    unsigned RX                 :1;
+    unsigned RXOF               :1;
+    unsigned RXFSTA             :3;
+    unsigned RXS                :1;
+    unsigned CSERR              :1;
+    unsigned CSFLG              :1;
+    unsigned CSRSG              :1;
+    unsigned                    :1;      
+} SPIxSTAbits_t;
+
+#define SPI0STAbits     (*(volatile SPIxSTAbits_t *)SPI0STA)
+#define SPI1STAbits     (*(volatile SPIxSTAbits_t *)SPI1STA)
+
+typedef struct {
+    unsigned DATA_BYTE_1        :8;
+    unsigned DMA_DATA_BYTE_2    :8;
+} SPIxRXbits_t;
+
+#define SPI0RXbits      (*(volatile SPIxRXbits_t *)SPI0RX)
+#define SPI1RXbits      (*(volatile SPIxRXbits_t *)SPI1RX)
+
+typedef struct {
+    unsigned DATA_BYTE_1        :8;
+    unsigned DMA_DATA_BYTE2     :8;
+} SPIxTXbits_t;
+
+#define SPI0TXbits      (*(volatile SPIxTXbits_t *)SPI0TX)
+#define SPI1TXbits      (*(volatile SPIxTXbits_t *)SPI1TX)
+
+typedef struct {
+    unsigned DIV                :6;
+    unsigned HFM                :1;
+    unsigned BCRST              :1;
+    unsigned CSIRQ_EN           :1;
+    unsigned                    :7;
+} SPIxDIVbits_t;
+
+#define SPI0DIVbits     (*(volatile SPIxDIVbits_t *)SPI0DIV)
+#define SPI1DIVbits     (*(volatile SPIxDIVbits_t *)SPI1DIV)
+
+typedef struct {
+    unsigned ENABLE             :1;
+    unsigned MASEN              :1;
+    unsigned CPHA               :1;
+    unsigned CPOL               :1;
+    unsigned WOM                :1;
+    unsigned LSB                :1;
+    unsigned TIM                :1;
+    unsigned ZEN                :1;
+    unsigned RXOF               :1;
+    unsigned OEN                :1;
+    unsigned LOOPBACK           :1;
+    unsigned CON                :1;
+    unsigned RFLUSH             :1;
+    unsigned TFLUSH             :1;
+    unsigned MOD                :2;
+} SPIxCONbits_t;
+
+#define SPI0CONbits     (*(volatile SPIxCONbits_t *)SPI0CON)
+#define SPI1CONbits     (*(volatile SPIxCONbits_t *)SPI1CON)
+
+typedef struct {
+    unsigned ENABLE             :1;
+    unsigned IENTXDMA           :1;
+    unsigned IENRXDMA           :1;
+    unsigned                    :13;
+} SPIxDMAbits_t;
+
+#define SPI0DMAbits     (*(volatile SPIxDMAbits_t *)SPI0DMA)
+#define SPI1DMAbits     (*(volatile SPIxDMAbits_t *)SPI1DMA)
+
+typedef struct {
+    unsigned COUNT              :8;
+    unsigned                    :8;
+} SPIxCNTbits_t;
+
+#define SPI0CNTbits     (*(volatile SPIxCNTbits_t *)SPI0CNT)
+#define SPI1CNTbits     (*(volatile SPIxCNTbits_t *)SPI1CNT)
+
+
+
 #endif
