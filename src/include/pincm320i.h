@@ -1050,7 +1050,34 @@ I2C0 Byte Registers
 #endif
 
 /*----------------------------
-I2C0 Bit field definitions
+I2C1 Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define I2C1MCON            __UINT16__(0x40003000)
+#define I2C1MSTA            __UINT16__(0x40003004)
+#define I2C1MRX             __UINT16__(0x40003008)
+#define I2C1MTX             __UINT16__(0x4000300C)
+#define I2C1MRXCNT          __UINT16__(0x40003010)
+#define I2C1MCRXCNT         __UINT16__(0x40003014)
+#define I2C1ADR0            __UINT16__(0x40003018)
+#define I2C1ADR1            __UINT16__(0x4000301C)
+#define I2C1DIV             __UINT16__(0x40003024)
+#define I2C1SCON            __UINT16__(0x40003028)
+#define I2C1SSTA            __UINT16__(0x4000302C)
+#define I2C1SRX             __UINT16__(0x40003030)
+#define I2C1STX             __UINT16__(0x40003034)
+#define I2C1ALT             __UINT16__(0x40003038)
+#define I2C1ID0             __UINT16__(0x4000303C)
+#define I2C1ID1             __UINT16__(0x40003040)
+#define I2C1ID2             __UINT16__(0x40003044)
+#define I2C1ID3             __UINT16__(0x40003048)
+#define I2C1FSTA            __UINT16__(0x4000304C)
+#define I2C1SHCON           __UINT16__(0x40003050)
+#define I2C1ASSCL           __UINT16__(0x40003058)
+#endif
+
+/*----------------------------
+I2C0/1 Bit field definitions
 -----------------------------*/
 typedef struct {
     unsigned MASEN              :1;
@@ -1066,9 +1093,10 @@ typedef struct {
     unsigned MRXDMA             :1;
     unsigned MTXDMA             :1;
     unsigned                    :1;
-} I2C0MCONbits_t;
+} I2CxMCONbits_t;
 
-#define I2C0MCONbits    (*(volatile I2C0MCONbits_t *)I2C0MCON)
+#define I2C0MCONbits    (*(volatile I2CxMCONbits_t *)I2C0MCON)
+#define I2C1MCONbits    (*(volatile I2CxMCONbits_t *)I2C1MCON)
 
 typedef struct {
     unsigned MTXFSTA            :2;
@@ -1086,59 +1114,67 @@ typedef struct {
     unsigned SDA_FILTERED       :1;
     unsigned SCL_FILTERED       :1;
     unsigned                    :1;
-} I2C0MSTAbits_t;
+} I2CxMSTAbits_t;
 
-#define I2C0MSTAbits    (*(volatile I2C0MSTAbits_t *)I2C0MSTA)
- 
+#define I2C0MSTAbits    (*(volatile I2CxMSTAbits_t *)I2C0MSTA)
+#define I2C1MSTAbits    (*(volatile I2CxMSTAbits_t *)I2C1MSTA)
+
 typedef struct {
     unsigned ICMRX              :8;
     unsigned                    :8;
-} I2C0MRXbits_t;
+} I2CxMRXbits_t;
 
-#define I2C0MRXbits     (*(volatile I2C0MRXbits_t *)I2C0MRX)
+#define I2C0MRXbits     (*(volatile I2CxMRXbits_t *)I2C0MRX)
+#define I2C1MRXbits     (*(volatile I2CxMRXbits_t *)I2C1MRX)
 
 typedef struct {
     unsigned ICMTX              :8;
     unsigned                    :8;
-} I2C0MTXbits_t;
+} I2CxMTXbits_t;
 
-#define I2C0MTXbits     (*(volatile I2C0MTXbits_t *)I2C0MTX)
+#define I2C0MTXbits     (*(volatile I2CxMTXbits_t *)I2C0MTX)
+#define I2C1MTXbits     (*(volatile I2CxMTXbits_t *)I2C1MTX)
 
 typedef struct {
     unsigned COUNT              :8;
     unsigned EXTEND             :1;
     unsigned                    :7;
-} I2C0MRXCNTbits_t;
+} I2CxMRXCNTbits_t;
 
-#define I2C0MRXCNTbits  (*(volatile I2C0MRXCNTbits_t *)I2C0MRXCNT)
+#define I2C0MRXCNTbits  (*(volatile I2CxMRXCNTbits_t *)I2C0MRXCNT)
+#define I2C1MRXCNTbits  (*(volatile I2CxMRXCNTbits_t *)I2C1MRXCNT)
 
 typedef struct {
     unsigned COUNT              :8;
     unsigned                    :8;
-} I2C0MCRXCNTbits_t;
+} I2CxMCRXCNTbits_t;
 
-#define I2C0MCRXCNTbits (*(volatile I2C0MCRXCNTbits_t *)I2C0MCRXCNT)
+#define I2C0MCRXCNTbits (*(volatile I2CxMCRXCNTbits_t *)I2C0MCRXCNT)
+#define I2C1MCRXCNTbits (*(volatile I2CxMCRXCNTbits_t *)I2C1MCRXCNT)
 
 typedef struct {
     unsigned ADR0               :8;
     unsigned                    :8;
-} I2C0ADR0bits_t;
+} I2CxADR0bits_t;
 
-#define I2C0ADR0bits    (*(volatile I2C0ADR0bits_t *)I2C0ADR0)
+#define I2C0ADR0bits    (*(volatile I2CxADR0bits_t *)I2C0ADR0)
+#define I2C1ADR0bits    (*(volatile I2CxADR0bits_t *)I2C1ADR0)
 
 typedef struct {
     unsigned ADR1               :8;
     unsigned                    :8;
-} I2C0ADR1bits_t;
+} I2CxADR1bits_t;
 
-#define I2C0ADR1bits    (*(volatile I2C0ADR0bits_t *)I2C0ADR1)
+#define I2C0ADR1bits    (*(volatile I2CxADR0bits_t *)I2C0ADR1)
+#define I2C1ADR1bits    (*(volatile I2CxADR0bits_t *)I2C1ADR1)
 
 typedef struct {
     unsigned LOW                :8;
     unsigned HIGH               :8;
-} I2C0DIVbits_t;
+} I2CxDIVbits_t;
 
-#define I2C0DIVbits     (*(volatile I2C0DIVbits_t *)I2C0DIV)
+#define I2C0DIVbits     (*(volatile I2CxDIVbits_t *)I2C0DIV)
+#define I2C1DIVbits     (*(volatile I2CxDIVbits_t *)I2C1DIV)
 
 typedef struct {
     unsigned SLVEN              :1;
@@ -1157,9 +1193,10 @@ typedef struct {
     unsigned SRXDMA             :1;
     unsigned STXDMA             :1;
     unsigned                    :1;
-} I2C0SCONbits_t;
+} I2CxSCONbits_t;
 
-#define I2C0SCONbits    (*(volatile I2C0SCONbits_t *)I2C0SCON)
+#define I2C0SCONbits    (*(volatile I2CxSCONbits_t *)I2C0SCON)
+#define I2C1SCONbits    (*(volatile I2CxSCONbits_t *)I2C1SCON)
 
 typedef struct {
     unsigned STXFSEREQ          :1;
@@ -1176,58 +1213,66 @@ typedef struct {
     unsigned REPSTART           :1;
     unsigned START              :1;
     unsigned                    :1;
-} I2C0SSTAbits_t;
+} I2CxSSTAbits_t;
 
-#define I2C0SSTAbits    (*(volatile I2C0SSTAbits_t *)I2C0SSTA)
+#define I2C0SSTAbits    (*(volatile I2CxSSTAbits_t *)I2C0SSTA)
+#define I2C1SSTAbits    (*(volatile I2CxSSTAbits_t *)I2C1SSTA)
 
 typedef struct {
     unsigned ICSRX              :8;
     unsigned                    :8;
-} I2C0SRXbits_t;
+} I2CxSRXbits_t;
 
-#define I2C0SRXbits     (*(volatile I2C0SRXbits_t *)I2C0SRX)
+#define I2C0SRXbits     (*(volatile I2CxSRXbits_t *)I2C0SRX)
+#define I2C1SRXbits     (*(volatile I2CxSRXbits_t *)I2C1SRX)
 
 typedef struct {
     unsigned ICSTX              :8;
     unsigned                    :8;
-} I2C0STXbits_t;
+} I2CxSTXbits_t;
 
-#define I2C0STXbits     (*(volatile I2C0STXbits_t *)I2C0STX)
+#define I2C0STXbits     (*(volatile I2CxSTXbits_t *)I2C0STX)
+#define I2C1STXbits     (*(volatile I2CxSTXbits_t *)I2C1STX)
 
 typedef struct {
     unsigned ALT                :8;
     unsigned                    :8;
-} I2C0ALTbits_t;
+} I2CxALTbits_t;
 
-#define I2C0ALTbits     (*(volatile I2C0ALTbits_t *)I2C0ALT)
+#define I2C0ALTbits     (*(volatile I2CxALTbits_t *)I2C0ALT)
+#define I2C1ALTbits     (*(volatile I2CxALTbits_t *)I2C1ALT)
 
 typedef struct {
     unsigned ID0                :8;
     unsigned                    :8;
-} I2C0ID0bits_t;
+} I2CxID0bits_t;
 
-#define I2C0ID0bits     (*(volatile I2C0ID0bits_t *)I2C0ID0)
+#define I2C0ID0bits     (*(volatile I2CxID0bits_t *)I2C0ID0)
+#define I2C1ID0bits     (*(volatile I2CxID0bits_t *)I2C1ID0)
 
 typedef struct {
     unsigned ID1                :8;
     unsigned                    :8;
-} I2C0ID1bits_t;
+} I2CxID1bits_t;
 
-#define I2C0ID1bits     (*(volatile I2C0ID1bits_t *)I2C0ID1)
+#define I2C0ID1bits     (*(volatile I2CxID1bits_t *)I2C0ID1)
+#define I2C1ID1bits     (*(volatile I2CxID1bits_t *)I2C1ID1)
 
 typedef struct {
     unsigned ID2                :8;
     unsigned                    :8;
-} I2C0ID2bits_t;
+} I2CxID2bits_t;
 
-#define I2C0ID2bits     (*(volatile I2C0ID2bits_t *)I2C0ID2)
+#define I2C0ID2bits     (*(volatile I2CxID2bits_t *)I2C0ID2)
+#define I2C1ID2bits     (*(volatile I2CxID2bits_t *)I2C1ID2)
 
 typedef struct {
     unsigned ID3                :8;
     unsigned                    :8;
-} I2C0ID3bits_t;
+} I2CxID3bits_t;
 
-#define I2C0ID3bits     (*(volatile I2C0ID3bits_t *)I2C0ID3)
+#define I2C0ID3bits     (*(volatile I2CxID3bits_t *)I2C0ID3)
+#define I2C1ID3bits     (*(volatile I2CxID3bits_t *)I2C1ID3)
 
 typedef struct {
     unsigned STXFSTA            :2;
@@ -1237,16 +1282,18 @@ typedef struct {
     unsigned SFLUSH             :1;
     unsigned MFLUSH             :1;
     unsigned                    :6;
-} I2C0FSTAbits_t;
+} I2CxFSTAbits_t;
 
-#define I2C0FSTAbits    (*(volatile I2C0FSTAbits_t *)I2C0FSTA)
+#define I2C0FSTAbits    (*(volatile I2CxFSTAbits_t *)I2C0FSTA)
+#define I2C1FSTAbits    (*(volatile I2CxFSTAbits_t *)I2C1FSTA)
 
 typedef struct {
     unsigned RESET              :1;
     unsigned                    :15;
-} I2C0SHCONbits_t;
+} I2CxSHCONbits_t;
 
-#define I2C0SHCONbits   (*(volatile I2C0SHCONbits_t *)I2C0SHCON)
+#define I2C0SHCONbits   (*(volatile I2CxSHCONbits_t *)I2C0SHCON)
+#define I2C1SHCONbits   (*(volatile I2CxSHCONbits_t *)I2C1SHCON)
 
 typedef struct {
     unsigned MSTRCON            :4;
@@ -1254,9 +1301,9 @@ typedef struct {
     unsigned MSTRTSTA           :1;
     unsigned SSRTSTA            :1;
     unsigned                    :6;
-} I2C0ASSCLbits_t;
+} I2CxASSCLbits_t;
 
-#define I2C0ASSCLbits   (*(volatile I2C0ASSCLbits_t *)I2C0ASSCL)
-
+#define I2C0ASSCLbits   (*(volatile I2CxASSCLbits_t *)I2C0ASSCL)
+#define I2C1ASSCLbits   (*(volatile I2CxASSCLbits_t *)I2C1ASSCL)
 
 #endif
