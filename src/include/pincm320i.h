@@ -1638,4 +1638,61 @@ typedef struct {
 #define T1STAbits       (*(volatile TxSTAbits_t *)T1STA)
 #define T2STAbits       (*(volatile TxSTAbits_t *)T2STA)
 
+/*----------------------------
+Watchdog Timer Byte register
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+    #define T3LD            __UINT16__(0x40002580)
+    #define T3VAL           __UINT16__(0x40002584)
+    #define T3CON           __UINT16__(0x40002588)
+    #define T3CLRI          __UINT16__(0x4000258C)
+    #define T3STA           __UINT16__(0x40002598)
+#endif
+
+/*----------------------------
+Watchdog Timer Bit field definitions
+-----------------------------*/
+
+typedef struct {
+    unsigned LOAD           :16;
+} T3LDbits_t;
+
+#define T3LDbits        (*(volatile T3LDbits_t *)T3LD)
+
+typedef struct {
+    unsigned CCOUNT         :16;
+} T3VALbits_t;
+
+#define T3VALbits       (*(volatile T3VALbits_t *)T3VAL)
+
+typedef struct {
+    unsigned PMD            :1;
+    unsigned IRQ            :1;
+    unsigned PRE            :2;
+    unsigned                :1;
+    unsigned ENABLE         :1;
+    unsigned MOD            :1;
+    unsigned                :9;
+} T3CONbits_t;
+
+#define T3CONbits       (*(volatile T3CONbits_t *)T3CON)
+
+typedef struct {
+    unsigned CLRWDG         :16;
+} T3CLRIbits_t;
+
+#define T3CLRIbits      (*(volatile T3CLRIbits_t *)T3CLRI)
+
+typedef struct {
+    unsigned IRQ            :1;
+    unsigned CLRI           :1;
+    unsigned LD             :1;
+    unsigned CON            :1;
+    unsigned LOCK           :1;
+    unsigned                :11;
+} T3STAbits_t;
+
+#define T3STAbits       (*(volatile T3STAbits_t *)T3STA)
+
+
 #endif
