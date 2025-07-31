@@ -1120,11 +1120,18 @@ typedef struct {
 #define I2C0MCRXCNTbits (*(volatile I2C0MCRXCNTbits_t *)I2C0MCRXCNT)
 
 typedef struct {
-    unsigned ADR1               :8;
+    unsigned ADR0               :8;
     unsigned                    :8;
 } I2C0ADR0bits_t;
 
 #define I2C0ADR0bits    (*(volatile I2C0ADR0bits_t *)I2C0ADR0)
+
+typedef struct {
+    unsigned ADR1               :8;
+    unsigned                    :8;
+} I2C0ADR1bits_t;
+
+#define I2C0ADR1bits    (*(volatile I2C0ADR0bits_t *)I2C0ADR1)
 
 typedef struct {
     unsigned LOW                :8;
