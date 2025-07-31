@@ -11,10 +11,10 @@
 Clock Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define CLKCON0     __UINT16__(0x40028000)
-#define CLKCON1     __UINT16__(0x40028004)
-#define CLKCON5     __UINT16__(0x40028014)
-#define CLKSTAT0    __UINT16__(0x40028018)
+    #define CLKCON0     __UINT16__(0x40028000)
+    #define CLKCON1     __UINT16__(0x40028004)
+    #define CLKCON5     __UINT16__(0x40028014)
+    #define CLKSTAT0    __UINT16__(0x40028018)
 #endif
 
 /*----------------------------
@@ -75,8 +75,8 @@ typedef struct {
 PWR management Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define PWR_MOD         __UINT16__(0x40002400)
-#define PWR_KEY         __UINT16__(0x40002404)
+    #define PWR_MOD         __UINT16__(0x40002400)
+    #define PWR_KEY         __UINT16__(0x40002404)
 #endif
 
 /*----------------------------
@@ -100,40 +100,40 @@ typedef struct {
 ADC Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define ADCCON          __UINT16__(0x40082174)
-#define ADCDAT0         __UINT32__(0x40086000)
-#define ADCDAT1         __UINT32__(0x40086004)
-#define ADCDAT2         __UINT32__(0x40086008)
-#define ADCDAT3         __UINT32__(0x4008600C)
-#define ADCDAT4         __UINT32__(0x40086010)
-#define ADCDAT5         __UINT32__(0x40086014)
-#define ADCDAT6         __UINT32__(0x40086018)
-#define ADCDAT7         __UINT32__(0x4008601C)
-#define ADCDAT8         __UINT32__(0x40086020)
-#define ADCDAT9         __UINT32__(0x40086024)
-#define ADCDAT10        __UINT32__(0x40086028)
-#define ADCDAT11        __UINT32__(0x4008602C)
-#define ADCDAT12        __UINT32__(0x40086030)
-#define ADCDAT13        __UINT32__(0x40086034)
-#define ADCDAT14        __UINT32__(0x40086038)
-#define ADCDAT15        __UINT32__(0x4008603C)
-#define ADCDAT16        __UINT32__(0x40086040)
-#define ADCDAT17        __UINT32__(0x40086044)
-#define ADCDAT18        __UINT32__(0x40086048)
-#define ADCDAT19        __UINT32__(0x4008604C)
-#define ADCDAT20        __UINT32__(0x40086050)
-#define ADCDAT21        __UINT32__(0x40086054)
-#define ADCDAT22        __UINT32__(0x40086058)
-#define ADCDAT23        __UINT32__(0x4008605C)
-#define ADCDAT24        __UINT32__(0x40086060)
-#define ADCDAT25        __UINT32__(0x40086064)
-#define ADCDAT26        __UINT32__(0x40086068)
-#define ADCDAT27        __UINT32__(0x4008606C)
-#define ADCCHA          __UINT16__(0x40086080)
-#define ADCSEQ          __UINT32__(0x40086088)
-#define ADCSEQC         __UINT32__(0x4008608C)
-#define ADCCMP          __UINT32__(0x40086098)
-#define ADCCNVC         __UINT32__(0x4008609C)
+    #define ADCCON          __UINT16__(0x40082174)
+    #define ADCDAT0         __UINT32__(0x40086000)
+    #define ADCDAT1         __UINT32__(0x40086004)
+    #define ADCDAT2         __UINT32__(0x40086008)
+    #define ADCDAT3         __UINT32__(0x4008600C)
+    #define ADCDAT4         __UINT32__(0x40086010)
+    #define ADCDAT5         __UINT32__(0x40086014)
+    #define ADCDAT6         __UINT32__(0x40086018)
+    #define ADCDAT7         __UINT32__(0x4008601C)
+    #define ADCDAT8         __UINT32__(0x40086020)
+    #define ADCDAT9         __UINT32__(0x40086024)
+    #define ADCDAT10        __UINT32__(0x40086028)
+    #define ADCDAT11        __UINT32__(0x4008602C)
+    #define ADCDAT12        __UINT32__(0x40086030)
+    #define ADCDAT13        __UINT32__(0x40086034)
+    #define ADCDAT14        __UINT32__(0x40086038)
+    #define ADCDAT15        __UINT32__(0x4008603C)
+    #define ADCDAT16        __UINT32__(0x40086040)
+    #define ADCDAT17        __UINT32__(0x40086044)
+    #define ADCDAT18        __UINT32__(0x40086048)
+    #define ADCDAT19        __UINT32__(0x4008604C)
+    #define ADCDAT20        __UINT32__(0x40086050)
+    #define ADCDAT21        __UINT32__(0x40086054)
+    #define ADCDAT22        __UINT32__(0x40086058)
+    #define ADCDAT23        __UINT32__(0x4008605C)
+    #define ADCDAT24        __UINT32__(0x40086060)
+    #define ADCDAT25        __UINT32__(0x40086064)
+    #define ADCDAT26        __UINT32__(0x40086068)
+    #define ADCDAT27        __UINT32__(0x4008606C)
+    #define ADCCHA          __UINT16__(0x40086080)
+    #define ADCSEQ          __UINT32__(0x40086088)
+    #define ADCSEQC         __UINT32__(0x4008608C)
+    #define ADCCMP          __UINT32__(0x40086098)
+    #define ADCCNVC         __UINT32__(0x4008609C)
 #endif
 
 /*----------------------------
@@ -205,9 +205,9 @@ typedef struct {
 Additional Byte registers 
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define IBUFCON         __UINT16__(0x40081400);
-#define AFETEMPC        __UINT8__(0x40087830);
-#define AFEREFC         __UINT8__(0x40087834);
+    #define IBUFCON         __UINT16__(0x40081400);
+    #define AFETEMPC        __UINT8__(0x40087830);
+    #define AFEREFC         __UINT8__(0x40087834);
 #endif
 
 /*----------------------------
@@ -265,46 +265,46 @@ typedef struct {
 IDAC Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define IDAC0DAT        __UINT32__(0x40086800)
-#define IDAC0CON        __UINT8__(0x40086804)
-#define IDAC1DAT        __UINT32__(0x40086808)
-#define IDAC1CON        __UINT8__(0x4008680C)
-#define IDAC2DAT        __UINT32__(0x40086810)
-#define IDAC2CON        __UINT8__(0x40086814)
-#define IDAC3DAT        __UINT32__(0x40086818)
-#define IDAC3CON        __UINT8__(0x4008681C)
+    #define IDAC0DAT        __UINT32__(0x40086800)
+    #define IDAC0CON        __UINT8__(0x40086804)
+    #define IDAC1DAT        __UINT32__(0x40086808)
+    #define IDAC1CON        __UINT8__(0x4008680C)
+    #define IDAC2DAT        __UINT32__(0x40086810)
+    #define IDAC2CON        __UINT8__(0x40086814)
+    #define IDAC3DAT        __UINT32__(0x40086818)
+    #define IDAC3CON        __UINT8__(0x4008681C)
 #endif
 
 /*----------------------------
 VDAC Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define DAC0CON         __UINT16__(0x40082400)
-#define DAC1CON         __UINT16__(0x40082404)
-#define DAC2CON         __UINT16__(0x40082408)
-#define DAC3CON         __UINT16__(0x4008240C)
-#define DAC4CON         __UINT16__(0x40082410)
-#define DAC5CON         __UINT16__(0x40082414)
-#define DAC6CON         __UINT16__(0x40082418)
-#define DAC7CON         __UINT16__(0x4008241C)
-#define DAC0DAT         __UINT32__(0x40086404)
-#define DAC1DAT         __UINT32__(0x40086408)
-#define DAC2DAT         __UINT32__(0x4008640C)
-#define DAC3DAT         __UINT32__(0x40086410)
-#define DAC4DAT         __UINT32__(0x40086414)
-#define DAC5DAT         __UINT32__(0x40086418)
-#define DAC6DAT         __UINT32__(0x4008641C)
-#define DAC7DAT         __UINT32__(0x40086420)
+    #define DAC0CON         __UINT16__(0x40082400)
+    #define DAC1CON         __UINT16__(0x40082404)
+    #define DAC2CON         __UINT16__(0x40082408)
+    #define DAC3CON         __UINT16__(0x4008240C)
+    #define DAC4CON         __UINT16__(0x40082410)
+    #define DAC5CON         __UINT16__(0x40082414)
+    #define DAC6CON         __UINT16__(0x40082418)
+    #define DAC7CON         __UINT16__(0x4008241C)
+    #define DAC0DAT         __UINT32__(0x40086404)
+    #define DAC1DAT         __UINT32__(0x40086408)
+    #define DAC2DAT         __UINT32__(0x4008640C)
+    #define DAC3DAT         __UINT32__(0x40086410)
+    #define DAC4DAT         __UINT32__(0x40086414)
+    #define DAC5DAT         __UINT32__(0x40086418)
+    #define DAC6DAT         __UINT32__(0x4008641C)
+    #define DAC7DAT         __UINT32__(0x40086420)
 #endif
 
 /*----------------------------
 External Interrupts Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define EI0CFG          __UINT16__(0x40002420)
-#define EI1CFG          __UINT16__(0x40002424)
-#define EI2CFG          __UINT16__(0x40002428)
-#define EICLR           __UINT16__(0x40002430)
+    #define EI0CFG          __UINT16__(0x40002420)
+    #define EI1CFG          __UINT16__(0x40002424)
+    #define EI2CFG          __UINT16__(0x40002428)
+    #define EICLR           __UINT16__(0x40002430)
 #endif
 /*----------------------------
 Ext Interrupts Bit field definition
@@ -360,9 +360,9 @@ typedef struct {
 Low Voltage Die Interrupt Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define INTCLR          __UINT16__(0x40083004)
-#define INTSEL          __UINT16__(0x40083008)
-#define INTSTA          __UINT16__(0x4008300C)
+    #define INTCLR          __UINT16__(0x40083004)
+    #define INTSEL          __UINT16__(0x40083008)
+    #define INTSTA          __UINT16__(0x4008300C)
 #endif
 
 /*----------------------------
@@ -419,10 +419,10 @@ typedef struct {
 Reset Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define RSTCFG          __UINT16__(0x40002408)
-#define RST_KEY         __UINT16__(0x4000240C)
-#define RSTSTA          __UINT16__(0x40002440)
-#define LVRST           __UINT16__(0x40082C34)
+    #define RSTCFG          __UINT16__(0x40002408)
+    #define RST_KEY         __UINT16__(0x4000240C)
+    #define RSTSTA          __UINT16__(0x40002440)
+    #define LVRST           __UINT16__(0x40082C34)
 #endif
 
 /*----------------------------
@@ -462,22 +462,22 @@ typedef struct {
 DMA Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define DMASTA          __UINT32__(0x40010000)
-#define DMACFG          __UINT32__(0x40010004)
-#define DMAPDBPTR       __UINT32__(0x40010008)
-#define DMAADBPTR       __UINT32__(0x4001000C)
-#define DMASWREQ        __UINT32__(0x40010014)
-#define DMARMSKSET      __UINT32__(0x40010020)
-#define DMARMSKCLR      __UINT32__(0x40010024)
-#define DMAENSET        __UINT32__(0x40010028)
-#define DMAENCLR        __UINT32__(0x4001002C)
-#define DMAALTSET       __UINT32__(0x40010030)
-#define DMAALTCLR       __UINT32__(0x40010034)
-#define DMAPRISET       __UINT32__(0x40010038)
-#define DMAPRICLR       __UINT32__(0x4001003C)
-#define DMAERRCLR       __UINT32__(0x4001004C)
-#define DMABSSET        __UINT32__(0x40010800)
-#define DMABSCLR        __UINT32__(0x40010804)
+    #define DMASTA          __UINT32__(0x40010000)
+    #define DMACFG          __UINT32__(0x40010004)
+    #define DMAPDBPTR       __UINT32__(0x40010008)
+    #define DMAADBPTR       __UINT32__(0x4001000C)
+    #define DMASWREQ        __UINT32__(0x40010014)
+    #define DMARMSKSET      __UINT32__(0x40010020)
+    #define DMARMSKCLR      __UINT32__(0x40010024)
+    #define DMAENSET        __UINT32__(0x40010028)
+    #define DMAENCLR        __UINT32__(0x4001002C)
+    #define DMAALTSET       __UINT32__(0x40010030)
+    #define DMAALTCLR       __UINT32__(0x40010034)
+    #define DMAPRISET       __UINT32__(0x40010038)
+    #define DMAPRICLR       __UINT32__(0x4001003C)
+    #define DMAERRCLR       __UINT32__(0x4001004C)
+    #define DMABSSET        __UINT32__(0x40010800)
+    #define DMABSCLR        __UINT32__(0x40010804)
 #endif
 
 /*----------------------------
@@ -602,28 +602,28 @@ typedef struct {
 Flash Controller Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define FEESTA              __UINT32__(0x40018000)
-#define FEECON0             __UINT32__(0x40018004)
-#define FEECMD              __UINT32__(0x40018008)
-#define FEEFLADR            __UINT32__(0x4001800C)
-#define FEEFLDATA0          __UINT32__(0x40018010)
-#define FEEFLDATA1          __UINT32__(0x40018014)
-#define FEEADR0             __UINT32__(0x40018018)
-#define FEEADR1             __UINT32__(0x4001801C)
-#define FEEKEY              __UINT32__(0x40018020)
-#define FEEPRO0             __UINT32__(0x40018028)
-#define FEEPRO1             __UINT32__(0x4001802C)
-#define FEESIG              __UINT32__(0x40018034)
-#define FEECON1             __UINT32__(0x40018038)
-#define FEEWRADDRA          __UINT32__(0x40018040)
-#define FEEAEN0             __UINT32__(0x40018048)
-#define FEEAEN1             __UINT32__(0x4001804C)
-#define FEEECCCONFIG        __UINT32__(0x40018064)
-#define FEEECCADDR0         __UINT32__(0x40018074)
-#define FEEECCADDR1         __UINT32__(0x40018078)
-#define CACHESTAT           __UINT32__(0x400180C0)
-#define CACHESETUP          __UINT32__(0x400180C4)
-#define CACHEKEY            __UINT32__(0x400180C8)
+    #define FEESTA              __UINT32__(0x40018000)
+    #define FEECON0             __UINT32__(0x40018004)
+    #define FEECMD              __UINT32__(0x40018008)
+    #define FEEFLADR            __UINT32__(0x4001800C)
+    #define FEEFLDATA0          __UINT32__(0x40018010)
+    #define FEEFLDATA1          __UINT32__(0x40018014)
+    #define FEEADR0             __UINT32__(0x40018018)
+    #define FEEADR1             __UINT32__(0x4001801C)
+    #define FEEKEY              __UINT32__(0x40018020)
+    #define FEEPRO0             __UINT32__(0x40018028)
+    #define FEEPRO1             __UINT32__(0x4001802C)
+    #define FEESIG              __UINT32__(0x40018034)
+    #define FEECON1             __UINT32__(0x40018038)
+    #define FEEWRADDRA          __UINT32__(0x40018040)
+    #define FEEAEN0             __UINT32__(0x40018048)
+    #define FEEAEN1             __UINT32__(0x4001804C)
+    #define FEEECCCONFIG        __UINT32__(0x40018064)
+    #define FEEECCADDR0         __UINT32__(0x40018074)
+    #define FEEECCADDR1         __UINT32__(0x40018078)
+    #define CACHESTAT           __UINT32__(0x400180C0)
+    #define CACHESETUP          __UINT32__(0x400180C4)
+    #define CACHEKEY            __UINT32__(0x400180C8)
 #endif
 
 /*----------------------------
@@ -839,76 +839,76 @@ typedef struct {
 GPIO Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define GP0CON              __UINT16__(0x40020000)
-#define GP1CON              __UINT16__(0x40020040)
-#define GP2CON              __UINT16__(0x40020080)
-#define GP3CON              __UINT16__(0x400200C0)
-#define GP4CON              __UINT16__(0x40020100)
-#define GP5CON              __UINT16__(0x40020140)
-/*-------*/
-#define GP0OE               __UINT8__(0x40020004)
-#define GP1OE               __UINT8__(0x40020044)
-#define GP2OE               __UINT8__(0x40020084)
-#define GP3OE               __UINT8__(0x400200C4)
-#define GP4OE               __UINT8__(0x40020104)
-#define GP5OE               __UINT8__(0x40020144)
-/*-------*/
-#define GP0PUL              __UINT8__(0x40020008)
-#define GP1PUL              __UINT8__(0x40020048)
-#define GP2PUL              __UINT8__(0x40020088)
-#define GP3PUL              __UINT8__(0x400200C8)
-#define GP4PUL              __UINT8__(0x40020108)
-#define GP5PUL              __UINT8__(0x40020148)
-/*-------*/
-#define GP0IE               __UINT8__(0x4002000C)
-#define GP1IE               __UINT8__(0x4002004C)
-#define GP2IE               __UINT8__(0x4002008C)
-#define GP3IE               __UINT8__(0x400200CC)
-#define GP4IE               __UINT8__(0x4002010C)
-#define GP5IE               __UINT8__(0x4002014C)
-/*-------*/
-#define GP0IN               __UINT8__(0x40020010)
-#define GP1IN               __UINT8__(0x40020050)
-#define GP2IN               __UINT8__(0x40020090)
-#define GP3IN               __UINT8__(0x400200D0)
-#define GP4IN               __UINT8__(0x40020110)
-#define GP5IN               __UINT8__(0x40020150)
-/*-------*/
-#define GP0OUT              __UINT8__(0x40020014)
-#define GP0OUT              __UINT8__(0x40020014)
-#define GP1OUT              __UINT8__(0x40020054)
-#define GP2OUT              __UINT8__(0x40020094)
-#define GP3OUT              __UINT8__(0x400200D4)
-#define GP4OUT              __UINT8__(0x40020114)
-#define GP5OUT              __UINT8__(0x40020154)
-/*-------*/
-#define GP0SET              __UINT8__(0x40020018)
-#define GP1SET              __UINT8__(0x40020058)
-#define GP2SET              __UINT8__(0x40020098)
-#define GP3SET              __UINT8__(0x400200D8)
-#define GP4SET              __UINT8__(0x40020118)
-#define GP5SET              __UINT8__(0x40020158)
-/*-------*/
-#define GP0CLR              __UINT8__(0x4002001C)
-#define GP1CLR              __UINT8__(0x4002005C)
-#define GP2CLR              __UINT8__(0x4002009C)
-#define GP3CLR              __UINT8__(0x400200DC)
-#define GP4CLR              __UINT8__(0x4002011C)
-#define GP5CLR              __UINT8__(0x4002015C)
-/*-------*/
-#define GP0TGL              __UINT8__(0x40020020)
-#define GP1TGL              __UINT8__(0x40020060)
-#define GP2TGL              __UINT8__(0x400200A0)
-#define GP3TGL              __UINT8__(0x400200E0)
-#define GP4TGL              __UINT8__(0x40020120)
-#define GP5TGL              __UINT8__(0x40020160)
-/*-------*/
-#define GP0ODE              __UINT8__(0x40020024)
-#define GP1ODE              __UINT8__(0x40020064)
-#define GP2ODE              __UINT8__(0x400200A4)
-#define GP3ODE              __UINT8__(0x400200E4)
-#define GP4ODE              __UINT8__(0x40020124)
-#define GP5ODE              __UINT8__(0x40020164)
+    #define GP0CON              __UINT16__(0x40020000)
+    #define GP1CON              __UINT16__(0x40020040)
+    #define GP2CON              __UINT16__(0x40020080)
+    #define GP3CON              __UINT16__(0x400200C0)
+    #define GP4CON              __UINT16__(0x40020100)
+    #define GP5CON              __UINT16__(0x40020140)
+    /*-------*/
+    #define GP0OE               __UINT8__(0x40020004)
+    #define GP1OE               __UINT8__(0x40020044)
+    #define GP2OE               __UINT8__(0x40020084)
+    #define GP3OE               __UINT8__(0x400200C4)
+    #define GP4OE               __UINT8__(0x40020104)
+    #define GP5OE               __UINT8__(0x40020144)
+    /*-------*/
+    #define GP0PUL              __UINT8__(0x40020008)
+    #define GP1PUL              __UINT8__(0x40020048)
+    #define GP2PUL              __UINT8__(0x40020088)
+    #define GP3PUL              __UINT8__(0x400200C8)
+    #define GP4PUL              __UINT8__(0x40020108)
+    #define GP5PUL              __UINT8__(0x40020148)
+    /*-------*/
+    #define GP0IE               __UINT8__(0x4002000C)
+    #define GP1IE               __UINT8__(0x4002004C)
+    #define GP2IE               __UINT8__(0x4002008C)
+    #define GP3IE               __UINT8__(0x400200CC)
+    #define GP4IE               __UINT8__(0x4002010C)
+    #define GP5IE               __UINT8__(0x4002014C)
+    /*-------*/
+    #define GP0IN               __UINT8__(0x40020010)
+    #define GP1IN               __UINT8__(0x40020050)
+    #define GP2IN               __UINT8__(0x40020090)
+    #define GP3IN               __UINT8__(0x400200D0)
+    #define GP4IN               __UINT8__(0x40020110)
+    #define GP5IN               __UINT8__(0x40020150)
+    /*-------*/
+    #define GP0OUT              __UINT8__(0x40020014)
+    #define GP0OUT              __UINT8__(0x40020014)
+    #define GP1OUT              __UINT8__(0x40020054)
+    #define GP2OUT              __UINT8__(0x40020094)
+    #define GP3OUT              __UINT8__(0x400200D4)
+    #define GP4OUT              __UINT8__(0x40020114)
+    #define GP5OUT              __UINT8__(0x40020154)
+    /*-------*/
+    #define GP0SET              __UINT8__(0x40020018)
+    #define GP1SET              __UINT8__(0x40020058)
+    #define GP2SET              __UINT8__(0x40020098)
+    #define GP3SET              __UINT8__(0x400200D8)
+    #define GP4SET              __UINT8__(0x40020118)
+    #define GP5SET              __UINT8__(0x40020158)
+    /*-------*/
+    #define GP0CLR              __UINT8__(0x4002001C)
+    #define GP1CLR              __UINT8__(0x4002005C)
+    #define GP2CLR              __UINT8__(0x4002009C)
+    #define GP3CLR              __UINT8__(0x400200DC)
+    #define GP4CLR              __UINT8__(0x4002011C)
+    #define GP5CLR              __UINT8__(0x4002015C)
+    /*-------*/
+    #define GP0TGL              __UINT8__(0x40020020)
+    #define GP1TGL              __UINT8__(0x40020060)
+    #define GP2TGL              __UINT8__(0x400200A0)
+    #define GP3TGL              __UINT8__(0x400200E0)
+    #define GP4TGL              __UINT8__(0x40020120)
+    #define GP5TGL              __UINT8__(0x40020160)
+    /*-------*/
+    #define GP0ODE              __UINT8__(0x40020024)
+    #define GP1ODE              __UINT8__(0x40020064)
+    #define GP2ODE              __UINT8__(0x400200A4)
+    #define GP3ODE              __UINT8__(0x400200E4)
+    #define GP4ODE              __UINT8__(0x40020124)
+    #define GP5ODE              __UINT8__(0x40020164)
 #endif
 
 /*----------------------------
@@ -1026,54 +1026,54 @@ typedef struct {
 I2C0 Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define I2C0MCON            __UINT16__(0x40003000)
-#define I2C0MSTA            __UINT16__(0x40003004)
-#define I2C0MRX             __UINT16__(0x40003008)
-#define I2C0MTX             __UINT16__(0x4000300C)
-#define I2C0MRXCNT          __UINT16__(0x40003010)
-#define I2C0MCRXCNT         __UINT16__(0x40003014)
-#define I2C0ADR0            __UINT16__(0x40003018)
-#define I2C0ADR1            __UINT16__(0x4000301C)
-#define I2C0DIV             __UINT16__(0x40003024)
-#define I2C0SCON            __UINT16__(0x40003028)
-#define I2C0SSTA            __UINT16__(0x4000302C)
-#define I2C0SRX             __UINT16__(0x40003030)
-#define I2C0STX             __UINT16__(0x40003034)
-#define I2C0ALT             __UINT16__(0x40003038)
-#define I2C0ID0             __UINT16__(0x4000303C)
-#define I2C0ID1             __UINT16__(0x40003040)
-#define I2C0ID2             __UINT16__(0x40003044)
-#define I2C0ID3             __UINT16__(0x40003048)
-#define I2C0FSTA            __UINT16__(0x4000304C)
-#define I2C0SHCON           __UINT16__(0x40003050)
-#define I2C0ASSCL           __UINT16__(0x40003058)
+    #define I2C0MCON            __UINT16__(0x40003000)
+    #define I2C0MSTA            __UINT16__(0x40003004)
+    #define I2C0MRX             __UINT16__(0x40003008)
+    #define I2C0MTX             __UINT16__(0x4000300C)
+    #define I2C0MRXCNT          __UINT16__(0x40003010)
+    #define I2C0MCRXCNT         __UINT16__(0x40003014)
+    #define I2C0ADR0            __UINT16__(0x40003018)
+    #define I2C0ADR1            __UINT16__(0x4000301C)
+    #define I2C0DIV             __UINT16__(0x40003024)
+    #define I2C0SCON            __UINT16__(0x40003028)
+    #define I2C0SSTA            __UINT16__(0x4000302C)
+    #define I2C0SRX             __UINT16__(0x40003030)
+    #define I2C0STX             __UINT16__(0x40003034)
+    #define I2C0ALT             __UINT16__(0x40003038)
+    #define I2C0ID0             __UINT16__(0x4000303C)
+    #define I2C0ID1             __UINT16__(0x40003040)
+    #define I2C0ID2             __UINT16__(0x40003044)
+    #define I2C0ID3             __UINT16__(0x40003048)
+    #define I2C0FSTA            __UINT16__(0x4000304C)
+    #define I2C0SHCON           __UINT16__(0x40003050)
+    #define I2C0ASSCL           __UINT16__(0x40003058)
 #endif
 
 /*----------------------------
 I2C1 Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define I2C1MCON            __UINT16__(0x40003400)
-#define I2C1MSTA            __UINT16__(0x40003404)
-#define I2C1MRX             __UINT16__(0x40003408)
-#define I2C1MTX             __UINT16__(0x4000340C)
-#define I2C1MRXCNT          __UINT16__(0x40003410)
-#define I2C1MCRXCNT         __UINT16__(0x40003414)
-#define I2C1ADR0            __UINT16__(0x40003418)
-#define I2C1ADR1            __UINT16__(0x4000341C)
-#define I2C1DIV             __UINT16__(0x40003424)
-#define I2C1SCON            __UINT16__(0x40003428)
-#define I2C1SSTA            __UINT16__(0x4000342C)
-#define I2C1SRX             __UINT16__(0x40003430)
-#define I2C1STX             __UINT16__(0x40003434)
-#define I2C1ALT             __UINT16__(0x40003438)
-#define I2C1ID0             __UINT16__(0x4000343C)
-#define I2C1ID1             __UINT16__(0x40003440)
-#define I2C1ID2             __UINT16__(0x40003444)
-#define I2C1ID3             __UINT16__(0x40003448)
-#define I2C1FSTA            __UINT16__(0x4000344C)
-#define I2C1SHCON           __UINT16__(0x40003450)
-#define I2C1ASSCL           __UINT16__(0x40003458)
+    #define I2C1MCON            __UINT16__(0x40003400)
+    #define I2C1MSTA            __UINT16__(0x40003404)
+    #define I2C1MRX             __UINT16__(0x40003408)
+    #define I2C1MTX             __UINT16__(0x4000340C)
+    #define I2C1MRXCNT          __UINT16__(0x40003410)
+    #define I2C1MCRXCNT         __UINT16__(0x40003414)
+    #define I2C1ADR0            __UINT16__(0x40003418)
+    #define I2C1ADR1            __UINT16__(0x4000341C)
+    #define I2C1DIV             __UINT16__(0x40003424)
+    #define I2C1SCON            __UINT16__(0x40003428)
+    #define I2C1SSTA            __UINT16__(0x4000342C)
+    #define I2C1SRX             __UINT16__(0x40003430)
+    #define I2C1STX             __UINT16__(0x40003434)
+    #define I2C1ALT             __UINT16__(0x40003438)
+    #define I2C1ID0             __UINT16__(0x4000343C)
+    #define I2C1ID1             __UINT16__(0x40003440)
+    #define I2C1ID2             __UINT16__(0x40003444)
+    #define I2C1ID3             __UINT16__(0x40003448)
+    #define I2C1FSTA            __UINT16__(0x4000344C)
+    #define I2C1SHCON           __UINT16__(0x40003450)
+    #define I2C1ASSCL           __UINT16__(0x40003458)
 #endif
 
 /*----------------------------
@@ -1310,26 +1310,26 @@ typedef struct {
 SPI0 Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define SPI0STA             __UINT16__(0x4002C000)
-#define SPI0RX              __UINT16__(0x4002C004)
-#define SPI0TX              __UINT16__(0x4002C008)
-#define SPI0DIV             __UINT16__(0x4002C00C)
-#define SPI0CON             __UINT16__(0x4002C010)
-#define SPI0DMA             __UINT16__(0x4002C014)
-#define SPI0CNT             __UINT16__(0x4002C018)
+    #define SPI0STA             __UINT16__(0x4002C000)
+    #define SPI0RX              __UINT16__(0x4002C004)
+    #define SPI0TX              __UINT16__(0x4002C008)
+    #define SPI0DIV             __UINT16__(0x4002C00C)
+    #define SPI0CON             __UINT16__(0x4002C010)
+    #define SPI0DMA             __UINT16__(0x4002C014)
+    #define SPI0CNT             __UINT16__(0x4002C018)
 #endif
 
 /*----------------------------
 SPI1 Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define SPI1STA             __UINT16__(0x40030000)
-#define SPI1RX              __UINT16__(0x40030004)
-#define SPI1TX              __UINT16__(0x40030008)
-#define SPI1DIV             __UINT16__(0x4003000C)
-#define SPI1CON             __UINT16__(0x40030010)
-#define SPI1DMA             __UINT16__(0x40030014)
-#define SPI1CNT             __UINT16__(0x40030018)
+    #define SPI1STA             __UINT16__(0x40030000)
+    #define SPI1RX              __UINT16__(0x40030004)
+    #define SPI1TX              __UINT16__(0x40030008)
+    #define SPI1DIV             __UINT16__(0x4003000C)
+    #define SPI1CON             __UINT16__(0x40030010)
+    #define SPI1DMA             __UINT16__(0x40030014)
+    #define SPI1CNT             __UINT16__(0x40030018)
 #endif
 
 /*----------------------------
@@ -1423,17 +1423,17 @@ typedef struct {
 UART Byte Registers
 -----------------------------*/
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#define COMTX               __UINT16__(0x40005000)
-#define COMRX               __UINT16__(0x40005000)
-#define COMIEN              __UINT16__(0x40005004)
-#define COMIIR              __UINT16__(0x40005008)
-#define COMLCR              __UINT16__(0x4000500C)
-#define COMMCR              __UINT16__(0x40005010)
-#define COMLSR              __UINT16__(0x40005014)
-#define COMMSR              __UINT16__(0x40005018)
-#define COMSCR              __UINT16__(0x4000501C)
-#define COMFBR              __UINT16__(0x40005024)
-#define COMDIV              __UINT16__(0x40005028)
+    #define COMTX               __UINT16__(0x40005000)
+    #define COMRX               __UINT16__(0x40005000)
+    #define COMIEN              __UINT16__(0x40005004)
+    #define COMIIR              __UINT16__(0x40005008)
+    #define COMLCR              __UINT16__(0x4000500C)
+    #define COMMCR              __UINT16__(0x40005010)
+    #define COMLSR              __UINT16__(0x40005014)
+    #define COMMSR              __UINT16__(0x40005018)
+    #define COMSCR              __UINT16__(0x4000501C)
+    #define COMFBR              __UINT16__(0x40005024)
+    #define COMDIV              __UINT16__(0x40005028)
 #endif
 
 /*----------------------------
@@ -1545,5 +1545,97 @@ typedef struct {
 
 #define COMDIVbits      (*(volatile COMDIVbits_t *)COMDIV)
 
+/*----------------------------
+General Purpose Timers Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+    #define T0LD            __UINT16__(0x40000000)
+    #define T0VAL           __UINT16__(0x40000004)
+    #define T0CON           __UINT16__(0x40000008)
+    #define T0CLRI          __UINT16__(0x4000000C)
+    #define T0CAP           __UINT16__(0x40000010)
+    #define T0STA           __UINT16__(0x4000001C)
+
+    #define T1LD            __UINT16__(0x40000400)
+    #define T1VAL           __UINT16__(0x40000404)
+    #define T1CON           __UINT16__(0x40000408)
+    #define T1CLRI          __UINT16__(0x4000040C)
+    #define T1CAP           __UINT16__(0x40000410)
+    #define T1STA           __UINT16__(0x4000041C)
+
+    #define T1LD            __UINT16__(0x40000800)
+    #define T1VAL           __UINT16__(0x40000804)
+    #define T1CON           __UINT16__(0x40000808)
+    #define T1CLRI          __UINT16__(0x4000080C)
+    #define T1CAP           __UINT16__(0x40000810)
+    #define T1STA           __UINT16__(0x4000081C)
+#endif
+
+/*----------------------------
+General Purpose Timers bit field definitions
+-----------------------------*/
+
+typedef struct {
+    unsigned LOAD           :16;
+} TxLDbits_t;
+
+#define T0LDbits        (*(volatile TxLDbits_t *)T0LDbit)
+#define T1LDbits        (*(volatile TxLDbits_t *)T1LDbit)
+#define T2LDbits        (*(volatile TxLDbits_t *)T2LDbit)
+
+typedef struct {
+    unsigned VAL            :16;
+} TxVALbits_t;
+
+#define T0VALbits       (*(volatile TxVALbits_t *)T0VAL)
+#define T1VALbits       (*(volatile TxVALbits_t *)T1VAL)
+#define T2VALbits       (*(volatile TxVALbits_t *)T2VAL)
+
+typedef struct {
+    unsigned PRE            :2;
+    unsigned UP             :1;
+    unsigned MOD            :1;
+    unsigned ENABLE         :1;
+    unsigned CLK            :1;
+    unsigned RLD            :2;
+    unsigned EVENT          :4;
+    unsigned EVENTEN        :1;
+    unsigned                :3;
+} TxCONbits_t;
+
+#define T0CONbits       (*(volatile TxCONbits_t *)T0CON)
+#define T1CONbits       (*(volatile TxCONbits_t *)T1CON)
+#define T2CONbits       (*(volatile TxCONbits_t *)T2CON)
+
+typedef struct {
+    unsigned TMOUT          :1;
+    unsigned CAP            :1;
+    unsigned                :14;
+} TxCLRIbits_t;
+
+#define T0CLRI          (*(volatile TxCLRIbits_t *)T0CLRI)
+#define T1CLRI          (*(volatile TxCLRIbits_t *)T1CLRI)
+#define T2CLRI          (*(volatile TxCLRIbits_t *)T2CLRI)
+
+typedef struct {
+    unsigned CAP            :16;
+} TxCAPbits_t;
+
+#define T0CAPbits       (*(volatile TxCAPbits_t *)T0CAP)
+#define T1CAPbits       (*(volatile TxCAPbits_t *)T1CAP)
+#define T2CAPbits       (*(volatile TxCAPbits_t *)T2CAP)
+
+typedef struct {
+    unsigned TMOUT          :1;
+    unsigned CAP            :1;
+    unsigned                :3;
+    unsigned BUSY           :1;
+    unsigned PDOK           :1;
+    unsigned                :8;
+} TxSTAbits_t;
+
+#define T0STAbits       (*(volatile TxSTAbits_t *)T0STA)
+#define T1STAbits       (*(volatile TxSTAbits_t *)T1STA)
+#define T2STAbits       (*(volatile TxSTAbits_t *)T2STA)
 
 #endif
