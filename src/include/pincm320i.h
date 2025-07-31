@@ -1419,6 +1419,131 @@ typedef struct {
 #define SPI0CNTbits     (*(volatile SPIxCNTbits_t *)SPI0CNT)
 #define SPI1CNTbits     (*(volatile SPIxCNTbits_t *)SPI1CNT)
 
+/*----------------------------
+UART Byte Registers
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#define COMTX               __UINT16__(0x40005000)
+#define COMRX               __UINT16__(0x40005000)
+#define COMIEN              __UINT16__(0x40005004)
+#define COMIIR              __UINT16__(0x40005008)
+#define COMLCR              __UINT16__(0x4000500C)
+#define COMMCR              __UINT16__(0x40005010)
+#define COMLSR              __UINT16__(0x40005014)
+#define COMMSR              __UINT16__(0x40005018)
+#define COMSCR              __UINT16__(0x4000501C)
+#define COMFBR              __UINT16__(0x40005024)
+#define COMDIV              __UINT16__(0x40005028)
+#endif
+
+/*----------------------------
+UART Bit field definitions
+-----------------------------*/
+typedef struct {
+    unsigned THR            :8;
+    unsigned                :8;
+} COMTXbits_t;
+
+#define COMTXbits       (*(volatile COMTXbits_t *)COMTX)
+
+typedef struct {
+    unsigned RBR            :8;
+    unsigned                :8;
+} COMRXbits_t;
+
+#define COMRXbits       (*(volatile COMRXbits_t *)COMRX)
+
+typedef struct {
+    unsigned ERBFI          :1;
+    unsigned ETBEI          :1;
+    unsigned ELSI           :1;
+    unsigned EDSSI          :1;
+    unsigned EDMAT          :1;
+    unsigned EDMAR          :1;
+    unsigned                :10;
+} COMIENbits_t;
+
+#define COMIENbits      (*(volatile COMIENbits_t *)COMIEN)
+
+typedef struct {
+    unsigned NIRQ           :1;
+    unsigned STA            :2;
+    unsigned                :13;
+} COMIIRbits_t;
+
+#define COMIIRbits      (*(volatile COMIIRbits_t *)COMIIR)
+
+typedef struct {
+    unsigned WLS            :2;
+    unsigned STOP           :1;
+    unsigned PEN            :1;
+    unsigned EPS            :1;
+    unsigned SP             :1;
+    unsigned BRK            :1;
+    unsigned                :9;
+} COMCLRbits_t;
+
+#define COMCLRbits      (*(volatile COMCLRbits_t *)COMCLR)
+
+typedef struct {
+    unsigned DTR            :1;
+    unsigned RTS            :1;
+    unsigned OUT1           :1;
+    unsigned OUT2           :1;
+    unsigned LOOPBACK       :1;
+    unsigned                :11;
+} COMMCRbits_t;
+
+#define COMMCRbits      (*(volatile COMMCRbits_t *)COMMCR)
+
+typedef struct {
+    unsigned DR             :1;
+    unsigned OE             :1;
+    unsigned PE             :1;
+    unsigned FE             :1;
+    unsigned BI             :1;
+    unsigned THRE           :1;
+    unsigned TEMT           :1;
+    unsigned                :9;
+} COMLSRbits_t;
+
+#define COMLSRbits      (*(volatile COMLSRbits_t *)COMLSR)
+
+typedef struct {
+    unsigned DCTS           :1;
+    unsigned DDSR           :1;
+    unsigned TERI           :1;
+    unsigned DDCD           :1;
+    unsigned CTS            :1;
+    unsigned DSR            :1;
+    unsigned RI             :1;
+    unsigned DCD            :1;
+    unsigned                :8;
+} COMMSRbits_t;
+
+#define COMMSRbits      (*(volatile COMMSRbits_t *)COMMSR)
+
+typedef struct {
+    unsigned SCR            :8;
+    unsigned                :8;
+} COMSCRbits_t;
+
+#define COMSCRbits      (*(volatile COMSCRbits_t *)COMSCR)
+
+typedef struct {
+    unsigned DIVN           :11;
+    unsigned DIVM           :2;
+    unsigned                :2;
+    unsigned FBEN           :1;
+} COMFBRbits_t;
+
+#define COMFBRbits      (*(volatile COMFBRbits_t *)COMFBR)
+
+typedef struct {
+    unsigned DIv            :16;
+} COMDIVbits_t;
+
+#define COMDIVbits      (*(volatile COMDIVbits_t *)COMDIV)
 
 
 #endif
