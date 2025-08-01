@@ -6,7 +6,11 @@
  #ifndef WATCHDOG_H_
  #define WATCHDOG_H_
 
-
+//Macros for boolean
+#define ON                          1
+#define HI                          1
+#define OFF                         0
+#define LO                          0  
 
 
 
