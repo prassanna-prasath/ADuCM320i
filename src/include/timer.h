@@ -1,5 +1,5 @@
 /* Header file
- * Description: General Purpose Timer function signatures
+ * Description: General Purpose Timer function signatures and macros
  * Author: Prassanna
  */
 
