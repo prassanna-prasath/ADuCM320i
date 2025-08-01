@@ -1838,4 +1838,107 @@ typedef struct {
 
 #define T4WUFA1bits     (*(volatile T4WUFA1bits_t *)T4WUFA1)
 
+/*----------------------------
+PWM Byte register
+-----------------------------*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+    #define PWMCON0             __UINT16__(0x40024000)
+    #define PWMCON1             __UINT16__(0x40024004)
+    #define PWMICLR             __UINT16__(0x40024008)
+    #define PWM0COM0            __UINT16__(0x40024010)
+    #define PWM0COM1            __UINT16__(0x40024014)
+    #define PWM0COM2            __UINT16__(0x40024018)
+    #define PWM0LEN             __UINT16__(0x4002401C)
+    #define PWM1COM0            __UINT16__(0x40024020)
+    #define PWM1COM1            __UINT16__(0x40024024)
+    #define PWM1COM2            __UINT16__(0x40024028)
+    #define PWM1LEN             __UINT16__(0x4002402C)
+    #define PWM2COM0            __UINT16__(0x40024030)
+    #define PWM2COM1            __UINT16__(0x40024034)
+    #define PWM2COM2            __UINT16__(0x40024038)
+    #define PWM2LEN             __UINT16__(0x4002403C)
+    #define PWM3COM0            __UINT16__(0x40024040)
+    #define PWM3COM1            __UINT16__(0x40024044)
+    #define PWM3COM2            __UINT16__(0x40024048)
+    #define PWM3LEN             __UINT16__(0x4002404C)
+#endif
+
+/*----------------------------
+PWM Bit field definitions
+-----------------------------*/
+typedef struct {
+    unsigned PWMEN              :1;
+    unsigned HMODE              :1;
+    unsigned DIR                :1;
+    unsigned LCOMP              :1;
+    unsigned HOFF               :1;
+    unsigned POINV              :1;
+    unsigned PWMCMP             :3;
+    unsigned ENA                :1;
+    unsigned PWMIEN             :1;
+    unsigned PWM1INV            :1;
+    unsigned PWM3INV            :1;
+    unsigned PWM5INV            :1;
+    unsigned PWM7INV            :1;
+    unsigned SYNC               :1;
+} PWMCON0bits_t;
+
+#define PWMCON0bits     (*(volatile PWMCON0bits_t *)PWMCON0)
+
+typedef struct {
+    unsigned                    :6;
+    unsigned TRIP_EN            :1;
+    unsigned                    :9;
+} PWMCON1bits_t;
+
+#define PWMCON1bits     (*(volatile PWMCON1bits_t *)PWMCON1)
+
+typedef struct {
+    unsigned PWM0               :1;
+    unsigned PWM1               :1;
+    unsigned PWM2               :1;
+    unsigned PWM3               :1;
+    unsigned TRIP               :1;
+    unsigned                    :11;
+} PWMICLRbits_t;
+
+#define PWMICLRbits     (*(volatile PWMICLRbits_t *)PWMICLR)
+
+typedef struct {
+    unsigned COM0               :16;
+} PWMxCOM0bits_t;
+
+#define PWM0COM0bits    (*(volatile PWMxCOM0bits_t *)PWM0COM0)
+#define PWM1COM0bits    (*(volatile PWMxCOM0bits_t *)PWM1COM0)
+#define PWM2COM0bits    (*(volatile PWMxCOM0bits_t *)PWM2COM0)
+#define PWM3COM0bits    (*(volatile PWMxCOM0bits_t *)PWM3COM0)
+
+typedef struct {
+    unsigned COM1               :16;
+} PWMxCOM1bits_t;
+
+#define PWM0COM1bits    (*(volatile PWMxCOM1bits_t *)PWM0COM1)
+#define PWM1COM1bits    (*(volatile PWMxCOM1bits_t *)PWM1COM1) 
+#define PWM2COM1bits    (*(volatile PWMxCOM1bits_t *)PWM2COM1) 
+#define PWM3COM1bits    (*(volatile PWMxCOM1bits_t *)PWM3COM1) 
+
+
+typedef struct {
+    unsigned COM0               :16;
+} PWMxCOM0bits_t;
+
+#define PWM0COM2bits    (*(volatile PWMxCOM2bits_t *)PWM0COM2)
+#define PWM1COM2bits    (*(volatile PWMxCOM2bits_t *)PWM1COM2)
+#define PWM2COM2bits    (*(volatile PWMxCOM2bits_t *)PWM2COM2)
+#define PWM3COM2bits    (*(volatile PWMxCOM2bits_t *)PWM3COM2)
+
+typedef struct {
+    unsigned LEN                :16;
+} PWMxLENbits_t;
+
+#define PWM0LENbits     (*(volatile PWMxLENbits_t *)PWM0LEN)
+#define PWM1LENbits     (*(volatile PWMxLENbits_t *)PWM1LEN)
+#define PWM2LENbits     (*(volatile PWMxLENbits_t *)PWM2LEN)
+#define PWM3LENbits     (*(volatile PWMxLENbits_t *)PWM3LEN)
+
 #endif
