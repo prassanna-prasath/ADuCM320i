@@ -6,16 +6,10 @@
 #ifndef TIMER_H_
 #define TIMER_H_
 
-//Macros for boolean
-#define ON                          1
-#define HI                          1
-#define OFF                         0
-#define LO                          0  
-
 // CLKmodes for operations
-enum CLKmode { 
+typedef enum { 
     PCLK=0, HCLK, LFOSC, HFXTAL
-};
+} CLKmode;
 
 //Enumeration for timer capture events
 typedef enum {

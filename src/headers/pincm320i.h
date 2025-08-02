@@ -7,6 +7,12 @@
 #ifndef PINCM320I_H_
 #define PINCM320I_H_
 
+//Macros for boolean
+#define ON                          1
+#define HI                          1
+#define OFF                         0
+#define LO                          0 
+
 /*----------------------------
 Clock Byte Registers
 -----------------------------*/
