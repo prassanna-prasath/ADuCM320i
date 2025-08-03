@@ -113,7 +113,7 @@ double neuralNetwork (double * in_stream) {
 
                 hiddenLayer[j] = sigmoid(activation);
             }
-        }
+        
 
         //Compute output layer activation
         for (int j = 0; j < numOutputs; j++) {
@@ -128,6 +128,55 @@ double neuralNetwork (double * in_stream) {
 
         //Print the matrices in a display
 
+
+        //Backpropagation
+
+        //Compute the changes in output weights
+
+        double deltaOutput[numOutputs];
+
+        for (int j = 0; j < numOutputs; j++) {
+            double error = training_outputs[i][j] - outputLayer[j];
+            deltaOutput[j] = error * dSigmoid(outputLayer[j]);
+        }
+
+        //Compute changes in hidden weights
+
+        double deltaHidden[numHiddenNodes];
+
+        for(int j = 0; j < numHiddenNodes; j++) {
+            double error = 0.0;
+            for (int k = 0; k < numOutputs; k++) {
+                error += deltaOutput[k] * outputWeights[j][k];
+            }
+            deltaHidden[j] = error * dSigmoid(hiddenLayer[j]);
+        }
+
+        //Apply changes in hidden weights
+        for (int j = 0; j < numHiddenNodes; j++) {
+            hiddenLayerBias[j] += deltaHidden[j] * lr;
+            for (int k = 0; k < numInputs; k++) {
+                hiddenWeights[k][j] += hiddenLayer[k] * deltaHidden[j] * lr;
+            }
+        }
+
+        //Apply change in output weights
+        for (int j = 0; j < numOutputs; j++) {
+            outputLayerBias[j] += deltaOutput[j] * lr;
+            for (int k = 0; k < numHiddenNodes; k++) {
+                outputWeights[k][j] += hiddenLayer[k] * deltaOutput[j] * lr;
+            }
+        }
+
+        //Apply change in hidden weights
+        for (int j = 0; j < numHiddenNodes; j++) {
+            hiddenLayerBias[j] += deltaHidden[j] * lr;
+            for (int k = 0; k < numInputs; k++) {
+                hiddenWeights[k][j] += training_inputs[i][k] * deltaHidden[j] * lr;
+            }
+        }
+
+        //Print all matrices using UART/I2C/SPI
 
     }
 }
