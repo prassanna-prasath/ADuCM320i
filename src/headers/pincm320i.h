@@ -1487,9 +1487,9 @@ typedef struct {
     unsigned SP             :1;
     unsigned BRK            :1;
     unsigned                :9;
-} COMCLRbits_t;
+} COMLCRbits_t;
 
-#define COMCLRbits      (*(volatile COMCLRbits_t *)COMCLR)
+#define COMLCRbits      (*(volatile COMLCRbits_t *)COMLCR)
 
 typedef struct {
     unsigned DTR            :1;

@@ -29,8 +29,11 @@ void resetUART(void) {
 
 void initUART(void) {
 
-    resetUART();        //Reset the UART before initializing
-    INIT_UART_SIN();    //Initialize the UART Serial IN in GPIO
-    
+    resetUART();            //Reset the UART before initializing
+    INIT_UART_SIN();        //Initialize the UART Serial IN in GPIO
 
+    COMLCRbits.WLS = 0x11;  // 8 data bits
+    COMLCRbits.STOP = 0x0;  // 1 stop bit
+
+    
 }
