@@ -1546,7 +1546,7 @@ typedef struct {
 #define COMFBRbits      (*(volatile COMFBRbits_t *)COMFBR)
 
 typedef struct {
-    unsigned DIv            :16;
+    unsigned DIV            :16;
 } COMDIVbits_t;
 
 #define COMDIVbits      (*(volatile COMDIVbits_t *)COMDIV)

@@ -1,7 +1,12 @@
 #include "headers/pincm320i.h"
 #include "nn.h"
 #include "init.h"
+#include "include/uart.h"
 
+void init_MCU(void) {
+    initUART(8);    // length of databits as parameter
+
+}
 
 int main(void) {
     //Initialize MCU

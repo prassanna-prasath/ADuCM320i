@@ -27,13 +27,15 @@ void resetUART(void) {
     
 }
 
-void initUART(void) {
+void initUART(unsigned char dataBitsLen) {
 
-    resetUART();            //Reset the UART before initializing
-    INIT_UART_SIN();        //Initialize the UART Serial IN in GPIO
+    resetUART();                            //Reset the UART before initializing
+    INIT_UART_SIN();                        //Initialize the UART Serial IN in GPIO
 
-    COMLCRbits.WLS = 0x11;  // 8 data bits
-    COMLCRbits.STOP = 0x0;  // 1 stop bit
+    COMLCRbits.WLS = dataBitsLen - 0x101;   // 8 data bits
+    COMLCRbits.STOP = 0x0;                  // 1 stop bit
 
-    
+    COMFBRbits.DIVM = 0x1;
+    COMFBRbits.DIVN = 0x11;
+    COMDIVbits.DIV = 0x41;
 }
