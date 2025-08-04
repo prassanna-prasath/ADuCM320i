@@ -28,7 +28,9 @@ void resetUART(void) {
 }
 
 void initUART(void) {
-    resetUART();
-    INIT_UART_SIN();
+
+    resetUART();        //Reset the UART before initializing
+    INIT_UART_SIN();    //Initialize the UART Serial IN in GPIO
+    
 
 }
