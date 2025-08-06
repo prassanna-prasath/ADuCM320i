@@ -2,7 +2,7 @@
 #define UART_H_
 
 void resetUART(void);
-void initUART(unsigned char);
+void initUART(void);
 
 
 
